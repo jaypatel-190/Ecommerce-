@@ -4,6 +4,7 @@ import Layout from "../../Components/layout/Layout";
 import Category from "../../Components/category/Category";
 import HomePageProductCard from "../../Components/homePageProductCard/HomePageProductCard";
 import Track from "../../Components/track/Track";
+import Testimonial from "../../Components/testimonial/Testimonial";
 
 const Homepage = () => {
 
@@ -13,6 +14,7 @@ const Homepage = () => {
       <Category />
       <HomePageProductCard />
       <Track />
+      <Testimonial />
       
      
     </Layout>
