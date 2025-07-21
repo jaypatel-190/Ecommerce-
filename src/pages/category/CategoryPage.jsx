@@ -17,7 +17,7 @@ const CategoryPage = () => {
   const navigate = useNavigate();
 
   // console.log("Category Name:", categoryname);
-  console.log("All Products:", getAllProduct);
+  // console.log("All Products:", getAllProduct);
   // console.log(getAllProduct.category);
 
   // filter product

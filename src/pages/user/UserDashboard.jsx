@@ -5,7 +5,7 @@ import Loader from "../../Components/loader/Loader";
 
 const UserDashboard = () => {
   // user
-  const user = JSON.parse(localStorage.getItem("users"));
+  const user = JSON.parse(localStorage.getItem("users")) || {};
 
   const context = useContext(myContext);
   const { loading, getAllOrder } = context;
@@ -28,7 +28,7 @@ const UserDashboard = () => {
             </div>
 
             {/* main 2 */}
-            {getAllOrder
+            { Array.isArray(getAllOrder) && getAllOrder
               .filter((obj) => obj.userid === user?.uid)
               .map((order, index) => {
                 // console.log(order);

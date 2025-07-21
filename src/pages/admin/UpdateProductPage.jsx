@@ -40,7 +40,7 @@ const UpdateProductPage = () => {
   // navigate
   const navigate = useNavigate();
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   // product state
   const [product, setProduct] = useState({
@@ -65,6 +65,11 @@ const UpdateProductPage = () => {
       const productTemp = await getDoc(doc(fireDB, "products", id));
       //   console.log(product.data())
       const product = productTemp.data();
+      if (!product) {
+        toast.error("Product not found");
+        setLoading(false);
+        return;
+      }
       setProduct({
         title: product?.title,
         price: product?.price,
@@ -83,6 +88,15 @@ const UpdateProductPage = () => {
   };
 
   const updateProduct = async () => {
+    if (
+      product.title === "" ||
+      product.price === "" ||
+      product.productImageUrl === "" ||
+      product.category === "" ||
+      product.description === ""
+    ) {
+      return toast.error("All fields are required");
+    }
     setLoading(true);
     try {
       await setDoc(doc(fireDB, "products", id), product);
@@ -175,7 +189,7 @@ const UpdateProductPage = () => {
               }}
               className="w-full px-1 py-2 text-pink-300 bg-pink-50 border border-pink-200 rounded-md outline-none  "
             >
-              <option disabled>Select Product Category</option>
+              <option value="" disabled>Select Product Category</option>
               {categoryList.map((value, index) => {
                 const { name } = value;
                 return (
