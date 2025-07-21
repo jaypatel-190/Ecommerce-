@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router";
 import myContext from "../../context/myContext";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,7 +11,8 @@ const HomePageProductCard = () => {
   const context = useContext(myContext);
   const { getAllProduct } = context;
 
-  const cartItems = useSelector((state) => state.cart) || [];
+  const rawCartItems = useSelector((state) => state.cart) || [];
+  const cartItems = useMemo(() => rawCartItems, [rawCartItems]);
 
   console.log(cartItems);
 
