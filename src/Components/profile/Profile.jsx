@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const Profile = ({ user, logout }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isUserInfoDropdownOpen, setIsUserInfoDropdownOpen] = useState(false);
-  const navigate = useNavigate();
 
   // Function to toggle main dropdown visibility
   const toggleDropdown = () => {

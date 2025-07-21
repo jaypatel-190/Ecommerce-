@@ -17,7 +17,7 @@ import MyContext from "../../context/myContext";
 const CartPage = () => {
   const cartItems = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const { getAllProduct } = useContext(MyContext);
+  // const { getAllProduct } = useContext(MyContext);
 
   const deleteCart = (item) => {
     dispatch(deleteFromCart(item));
@@ -349,7 +349,7 @@ const CartPage = () => {
                                 });
                               }}
                               placeholder="Enter your pincode"
-                              className="bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 text-pink-600 placeholder-pink-300"
+                              className="bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none  text-pink-600 placeholder-pink-300"
                             />
                           </div>
                           <div className="mb-3">
