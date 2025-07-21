@@ -59,11 +59,11 @@ const AddProductPage = () => {
   // Add Product Function
   const addProductFunction = async () => {
     if (
-      product.title == "" ||
-      product.price == "" ||
-      product.productImageUrl == "" ||
-      product.category == "" ||
-      product.description == ""
+      product.title === "" ||
+      product.price === "" ||
+      product.productImageUrl === "" ||
+      product.category === "" ||
+      product.description === ""
     ) {
       return toast.error("all fields are required");
     }
