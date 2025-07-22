@@ -4,7 +4,6 @@ import myContext from "../../context/myContext";
 const OrderDetail = () => {
   const context = useContext(myContext);
   const { getAllOrder, orderDelete } = context;
-  // console.log(getAllOrder)
   return (
     <div>
       <div>
