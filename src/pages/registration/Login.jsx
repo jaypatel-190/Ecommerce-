@@ -69,7 +69,7 @@ const Login = () => {
         <div className='flex justify-center items-center h-screen'>
             {loading && <Loader />}
             {/* Login Form  */}
-            <div className="login_Form bg-pink-50 px-8 py-6 border border-pink-100 rounded-xl shadow-md">
+            <form onSubmit={(e) => {e.preventDefault(); userLoginFunction();}} className="login_Form bg-pink-50 px-8 py-6 border border-pink-100 rounded-xl shadow-md">
 
                 {/* Top Heading  */}
                 <div className="mb-5">
@@ -114,18 +114,15 @@ const Login = () => {
                 {/* Signup Button  */}
                 <div className="mb-5">
                     <button
-                        type='button'
-                        onClick={userLoginFunction}
+                        type='submit'
                         className='bg-pink-500 hover:bg-pink-600 w-full text-white text-center py-2 font-bold rounded-md '
                     >
                         Login
                     </button>
                 </div>
-
-                <div>
-                    <h2 className='text-black'>Don't Have an account <Link className=' text-pink-500 font-bold' to={'/signup'}>Signup</Link></h2>
-                </div>
-
+            </form>
+            <div>
+                <h2 className='text-black'>Don't Have an account <Link className=' text-pink-500 font-bold' to={'/signup'}>Signup</Link></h2>
             </div>
         </div>
     );
