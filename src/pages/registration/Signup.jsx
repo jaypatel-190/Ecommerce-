@@ -209,10 +209,10 @@ const Signup = () => {
                         Signup
                     </button>
                 </div>
+                <div>
+                    <h2 className='text-black'>Have an account <Link className=' text-pink-500 font-bold' to={'/login'}>Login</Link></h2>
+                </div>
             </form>
-            <div>
-                <h2 className='text-black'>Have an account <Link className=' text-pink-500 font-bold' to={'/login'}>Login</Link></h2>
-            </div>
         </div>
     );
 }
