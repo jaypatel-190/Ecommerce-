@@ -16,19 +16,14 @@ const CategoryPage = () => {
 
   const navigate = useNavigate();
 
-  // console.log("Category Name:", categoryname);
-  // console.log("All Products:", getAllProduct);
-  // console.log(getAllProduct.category);
 
   // filter product
   const filterProduct = getAllProduct.filter((obj) =>
     obj.category.includes(categoryname.toLowerCase())
   );
-  // console.log(filterProduct)
 
   const cartItems = useSelector((state) => state.cart) || [];
 
-  console.log(cartItems);
 
   const dispatch = useDispatch();
 

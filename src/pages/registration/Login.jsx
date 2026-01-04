@@ -31,7 +31,6 @@ const Login = () => {
         setLoading(true);
         try {
             const users = await signInWithEmailAndPassword(auth, userLogin.email, userLogin.password);
-            // console.log(users.user)
 
             try {
                 const q = query(
@@ -56,11 +55,12 @@ const Login = () => {
                 });
                 return () => data;
             } catch (error) {
-                console.log(error);
+                console.error('Error fetching user data:', error);
                 setLoading(false);
+                toast.error('Login failed');
             }
         } catch (error) {
-            console.log(error);
+            console.error('Authentication error:', error);
             setLoading(false);
             toast.error("Login Failed");
         }

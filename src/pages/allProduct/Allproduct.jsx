@@ -14,7 +14,6 @@ const AllProduct = () => {
 
   const cartItems = useSelector((state) => state.cart) || [];
 
-  // console.log(cartItems);
 
   const dispatch = useDispatch();
 

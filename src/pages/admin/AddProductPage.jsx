@@ -76,7 +76,7 @@ const AddProductPage = () => {
       navigate("/admin-dashboard");
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      console.error('Add product error:', error);
       setLoading(false);
       toast.error("Add product failed");
     }

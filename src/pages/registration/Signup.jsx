@@ -86,7 +86,7 @@ const Signup = () => {
             setLoading(false);
             navigate('/login');
         } catch (error) {
-            console.log(error);
+            console.error('Signup error:', error);
             toast.error("Signup failed");
             setLoading(false);
         }

@@ -38,8 +38,9 @@ function MyState({ children }) {
       });
       return () => data;
     } catch (error) {
-      console.log(error);
+      console.error('Error fetching products:', error);
       setLoading(false);
+      toast.error('Failed to load products');
     }
   };
 
@@ -64,8 +65,9 @@ function MyState({ children }) {
       });
       return () => data;
     } catch (error) {
-      console.log(error);
+      console.error('Error fetching orders:', error);
       setLoading(false);
+      toast.error('Failed to load orders');
     }
   };
 
@@ -107,8 +109,8 @@ function MyState({ children }) {
       toast.success("Item deleted successfully");
       setLoading(false);
     } catch (error) {
-      console.log(error);
-      toast.error("Failed to delete item");
+      console.error('Error deleting order item:', error);
+      toast.error('Failed to delete item');
       setLoading(false);
     }
   };
@@ -134,8 +136,9 @@ function MyState({ children }) {
       });
       return () => data;
     } catch (error) {
-      console.log(error);
+      console.error('Error fetching users:', error);
       setLoading(false);
+      toast.error('Failed to load users');
     }
   };
 

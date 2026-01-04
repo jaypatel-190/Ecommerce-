@@ -9,9 +9,7 @@ const UserDashboard = () => {
 
   const context = useContext(myContext);
   const { loading, getAllOrder } = context;
-  // console.log(getAllOrder)
 
-  // console.log(user)
   return (
     <Layout>
       
@@ -31,11 +29,9 @@ const UserDashboard = () => {
             { Array.isArray(getAllOrder) && getAllOrder
               .filter((obj) => obj.userid === user?.uid)
               .map((order, index) => {
-                // console.log(order);
                 return (
                   <div key={index}>
                     {order.cartItems.map((item, index) => {
-                      // console.log('item', item);
                       const {
                         id,
                         date,

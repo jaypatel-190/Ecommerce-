@@ -40,7 +40,6 @@ const UpdateProductPage = () => {
   // navigate
   const navigate = useNavigate();
   const { id } = useParams();
-  // console.log(id);
 
   // product state
   const [product, setProduct] = useState({
@@ -60,10 +59,8 @@ const UpdateProductPage = () => {
   // Get Single Product Function
   const getSingleProductFunction = async () => {
     setLoading(true);
-    // console.log(setLoading);
     try {
       const productTemp = await getDoc(doc(fireDB, "products", id));
-      //   console.log(product.data())
       const product = productTemp.data();
       if (!product) {
         toast.error("Product not found");
@@ -82,8 +79,9 @@ const UpdateProductPage = () => {
       });
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      console.error('Error fetching product:', error);
       setLoading(false);
+      toast.error('Failed to load product');
     }
   };
 
@@ -105,8 +103,9 @@ const UpdateProductPage = () => {
       setLoading(false);
       navigate("/admin-dashboard");
     } catch (error) {
-      console.log(error);
+      console.error('Error updating product:', error);
       setLoading(false);
+      toast.error('Failed to update product');
     }
   };
 

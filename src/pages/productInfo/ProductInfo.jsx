@@ -25,8 +25,9 @@ const ProductInfo = () => {
       setProduct({ ...productTemp.data(), id: productTemp.id });
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      console.error('Error fetching product data:', error);
       setLoading(false);
+      toast.error('Failed to load product');
     }
   };
 
@@ -122,7 +123,8 @@ const ProductInfo = () => {
       toast.success("Order placed successfully");
       closeModal();
     } catch (error) {
-      console.log(error);
+      console.error('Error placing order:', error);
+      toast.error('Failed to place order');
     }
   };
 
