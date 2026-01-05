@@ -80,8 +80,10 @@ const Login = () => {
 
                 {/* Input One  */}
                 <div className="mb-3">
+                    <label htmlFor="email" className="sr-only">Email Address</label>
                     <input
                         type="email"
+                        id="email"
                         name="email"
                         placeholder='Email Address'
                         value={userLogin.email}
@@ -97,8 +99,10 @@ const Login = () => {
 
                 {/* Input Two  */}
                 <div className="mb-5">
+                    <label htmlFor="password" className="sr-only">Password</label>
                     <input
                         type="password"
+                        id="password"
                         placeholder='Password'
                         value={userLogin.password}
                         onChange={(e) => {

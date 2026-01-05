@@ -106,8 +106,10 @@ const Signup = () => {
 
                 {/* Input First Name */}
                 <div className="mb-3">
+                    <label htmlFor="firstName" className="sr-only">First Name</label>
                     <input
                         type="text"
+                        id="firstName"
                         placeholder='First Name'
                         value={userSignup.firstName}
                         onChange={(e) => {
@@ -122,8 +124,10 @@ const Signup = () => {
 
                 {/* Input Last Name */}
                 <div className="mb-3">
+                    <label htmlFor="lastName" className="sr-only">Last Name</label>
                     <input
                         type="text"
+                        id="lastName"
                         placeholder='Last Name'
                         value={userSignup.lastName}
                         onChange={(e) => {
@@ -138,8 +142,10 @@ const Signup = () => {
 
                 {/* Input Email */}
                 <div className="mb-3">
+                    <label htmlFor="email" className="sr-only">Email Address</label>
                     <input
                         type="email"
+                        id="email"
                         placeholder='Email Address'
                         value={userSignup.email}
                         onChange={(e) => {
@@ -154,8 +160,10 @@ const Signup = () => {
 
                 {/* Input Password */}
                 <div className="mb-3">
+                    <label htmlFor="password" className="sr-only">Password</label>
                     <input
                         type="password"
+                        id="password"
                         placeholder='Password'
                         value={userSignup.password}
                         onChange={(e) => {
@@ -170,8 +178,10 @@ const Signup = () => {
 
                 {/* Input Confirm Password */}
                 <div className="mb-3">
+                    <label htmlFor="confirmPassword" className="sr-only">Confirm Password</label>
                     <input
                         type="password"
+                        id="confirmPassword"
                         placeholder='Confirm Password'
                         value={userSignup.confirmPassword}
                         onChange={(e) => {
@@ -186,8 +196,10 @@ const Signup = () => {
 
                 {/* Input Contact Number */}
                 <div className="mb-5">
+                    <label htmlFor="contactNumber" className="sr-only">Contact Number</label>
                     <input
                         type="text"
+                        id="contactNumber"
                         placeholder='Contact Number'
                         value={userSignup.contactNumber}
                         onChange={(e) => {
