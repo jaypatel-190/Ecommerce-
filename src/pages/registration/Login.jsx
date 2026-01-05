@@ -25,7 +25,9 @@ const Login = () => {
     const userLoginFunction = async () => {
         // validation 
         if (userLogin.email === "" || userLogin.password === "") {
-            toast.error("All Fields are required")
+            toast.error("All Fields are required");
+            setLoading(false);
+            return;
         }
 
         setLoading(true);
