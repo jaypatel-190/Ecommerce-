@@ -101,7 +101,7 @@ const UserDashboard = () => {
                                       <img
                                         className="h-40 w-40 rounded-lg border border-gray-200 object-contain"
                                         src={productImageUrl}
-                                        alt="img"
+                                        alt={`Order item ${title}`}
                                       />
                                     </div>
 

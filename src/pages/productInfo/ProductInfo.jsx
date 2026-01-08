@@ -143,7 +143,7 @@ const ProductInfo = () => {
                   <img
                     className="w-full lg:h-[39em] rounded-lg"
                     src={product?.productImageUrl}
-                    alt=""
+                    alt={`Product image of ${product?.title}`}
                   />
                 </div>
               </div>

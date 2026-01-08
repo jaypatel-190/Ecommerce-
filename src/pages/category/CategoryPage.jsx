@@ -115,7 +115,7 @@ const CategoryPage = () => {
                       <img
                         className=" mb-2"
                         src="https://cdn-icons-png.flaticon.com/128/2748/2748614.png"
-                        alt=""
+                        alt={`No ${categoryname} products found`}
                       />
                       {/* <img className=" mb-2" src={imges} alt="image" /> */}
                     </div>

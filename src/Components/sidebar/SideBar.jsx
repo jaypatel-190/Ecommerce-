@@ -72,7 +72,7 @@ const Sidebar = ({ toggleSidebar }) => {
             to={`/category/${item.name}`}
             className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md"
           >
-            <img src={item.image} alt={item.name} className="w-10 h-10" />
+            <img src={item.image} alt={`Category ${item.name}`} className="w-10 h-10" />
             <span className="text-white font-medium text-lg">{item.name}</span>
           </Link>
         ))}
