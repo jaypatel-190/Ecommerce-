@@ -18,7 +18,7 @@ const Testimonial = () => {
                         {/* Testimonial 1 */}
                         <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
                             <div className="h-full text-center">
-                                <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={testimonial1} />
+                                <img alt="Customer testimonial photo from Jay Patel" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={testimonial1} />
                                 <p className="leading-relaxed">Shopwave made shopping so easy! The interface is smooth, checkout was fast, and my order arrived quickly. Amazing quality!</p>
                                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                                 <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase">Jay Patel</h2>
@@ -29,7 +29,7 @@ const Testimonial = () => {
                         {/* Testimonial 2 */}
                         <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
                             <div className="h-full text-center">
-                                <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={testimonial2} />
+                                <img alt="Customer testimonial photo from Tirth Pipaliya" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={testimonial2} />
                                 <p className="leading-relaxed">Love Shopwave's variety and fast delivery! Customer support was great when I had a query. My go-to shopping site!</p>
                                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                                 <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase">Tirth Pipaliya</h2>
@@ -40,7 +40,7 @@ const Testimonial = () => {
                         {/* Testimonial 3 */}
                         <div className="lg:w-1/3 lg:mb-0 p-4">
                             <div className="h-full text-center">
-                                <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={testimonial3} />
+                                <img alt="Customer testimonial photo from Priya Sharma" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={testimonial3} />
                                 <p className="leading-relaxed">Shopwave is fantastic! Clear product details and quick delivery made my shopping experience perfect. Will shop again!</p>
                                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                                 <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase">Priya Sharma</h2>
