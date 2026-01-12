@@ -226,7 +226,7 @@ const CartPage = () => {
                   <dl className=" space-y-1 px-2 py-4">
                     <div className="flex items-center justify-between">
                       <dt className="text-sm text-gray-800">
-                        Price ({cartItemTotal} item)
+                        Price ({cartItemTotal} {cartItemTotal === 1 ? "item" : "items"})
                       </dt>
                       <dd className="text-sm font-medium text-gray-900">
                         ₹ {cartTotal}
