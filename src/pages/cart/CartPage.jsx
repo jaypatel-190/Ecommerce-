@@ -270,7 +270,7 @@ const CartPage = () => {
             <div className="mt-12 text-center">
               <img
                 src="https://www.schools365.in/static/version1714671919/frontend/MageBig/martfury_martfury_child/en_US/images/empty-cart.svg"
-                alt="Empty shopping cart illustration"
+                alt="Empty shopping cart"
                 className="mx-auto w-1/2"
               />
               <h2 className="text-2xl font-medium text-gray-900 mt-4">
