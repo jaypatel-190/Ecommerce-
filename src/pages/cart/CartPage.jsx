@@ -62,7 +62,7 @@ const CartPage = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  const handleBuyNow = () => {
+  const handleBuyNow = async () => {
     if (cartItems.length === 0) {
       toast.error("There are no products to buy");
       return;
@@ -93,7 +93,7 @@ const CartPage = () => {
 
     try {
       const orderRef = collection(fireDB, "order");
-      addDoc(orderRef, orderInfo);
+      await addDoc(orderRef, orderInfo);
       setAddressInfo({
         name: "",
         address: "",
