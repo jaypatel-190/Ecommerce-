@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../../Components/layout/Layout";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -12,12 +12,10 @@ import toast from "react-hot-toast";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { fireDB } from "../../firebase/FirebaseConfig";
 import { Navigate } from "react-router";
-import MyContext from "../../context/myContext";
 
 const CartPage = () => {
   const cartItems = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  // const { getAllProduct } = useContext(MyContext);
 
   const deleteCart = (item) => {
     dispatch(deleteFromCart(item));
