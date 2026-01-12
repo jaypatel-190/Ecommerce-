@@ -25,11 +25,9 @@ export const cartSlice = createSlice({
       });
     },
     decrementQuantity: (state, action) => {
-      state = state.map((item) => {
-        if (item.quantity !== 1) {
-          if (item.id === action.payload) {
-            item.quantity--;
-          }
+      return state.map((item) => {
+        if (item.id === action.payload && item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
         }
         return item;
       });
