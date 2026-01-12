@@ -26,6 +26,9 @@ const Navbar = () => {
 
   // Cart items
   const cartItems = useSelector((state) => state.cart);
+  
+  // Calculate total quantity of items in cart
+  const totalCartQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <>
@@ -102,9 +105,9 @@ const Navbar = () => {
               className="flex items-center text-white font-medium text-md ml-4 relative"
             >
               <ShoppingCartIcon className="ml-2" />
-              {cartItems.length > 0 && (
+              {totalCartQuantity > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {cartItems.length}
+                  {totalCartQuantity}
                 </span>
               )}
             </Link>
