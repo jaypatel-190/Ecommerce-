@@ -6,6 +6,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useSelector } from "react-redux";
 import Profile from "../profile/Profile";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -21,6 +22,7 @@ const Navbar = () => {
   // Logout function
   const logout = () => {
     localStorage.clear("users");
+    toast.success("Logged out successfully!");
     navigate("/login");
   };
 
