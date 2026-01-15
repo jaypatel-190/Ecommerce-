@@ -15,7 +15,10 @@ const ProductDetail = () => {
     const navigate = useNavigate();
 
     // Delete product 
-    const deleteProduct = async (id) => {
+    const deleteProduct = async (id, title) => {
+        const confirmDelete = window.confirm(`Are you sure you want to delete "${title}"? This action cannot be undone.`);
+        if (!confirmDelete) return;
+
         setLoading(true)
         try {
             await deleteDoc(doc(fireDB, 'products', id))
@@ -86,7 +89,7 @@ const ProductDetail = () => {
                                     <td onClick={() => navigate(`/updateproduct/${id}`)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-green-500 cursor-pointer ">
                                         Edit
                                     </td>
-                                    <td onClick={() => deleteProduct(id)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer ">
+                                    <td onClick={() => deleteProduct(id, title)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer ">
                                         Delete
                                     </td>
                                 </tr>
