@@ -81,7 +81,7 @@ const SearchBar = () => {
                         <>
                             {filterSearchData.map((item, index) => {
                                 return (
-                                    <div key={index} className={`py-2 px-2 cursor-pointer ${selectedIndex === index ? 'bg-gray-300' : ''}`}
+                                    <div key={item.id} className={`py-2 px-2 cursor-pointer ${selectedIndex === index ? 'bg-gray-300' : ''}`}
                                         onClick={() => navigate(`/productinfo/${item.id}`)}
                                         onMouseEnter={() => setSelectedIndex(index)}>
                                         <div className="flex items-center gap-2">
