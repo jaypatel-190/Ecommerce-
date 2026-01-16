@@ -34,8 +34,8 @@ const SearchBar = () => {
                         <>
                             {filterSearchData.map((item, index) => {
                                 return (
-                                    <div key={index} className="py-2 px-2 cursor-pointer" 
-                                    onClick={() => navigate(`/productinfo/${item.id}`)}>
+                                    <div key={index} className="py-2 px-2 cursor-pointer"
+                                        onClick={() => navigate(`/productinfo/${item.id}`)}>
                                         <div className="flex items-center gap-2">
                                             <img className="w-10" src={item.productImageUrl} alt={`Product image for ${item.title}`} />
                                             {item.title}
@@ -46,7 +46,12 @@ const SearchBar = () => {
                         </>
                         :
                         <>
-                        <div className="flex justify-center">Invalid item name</div>
+                            <div className="flex justify-center items-center py-4 text-gray-600">
+                                <div className="text-center">
+                                    <div className="text-sm">No products found for "{search}"</div>
+                                    <div className="text-xs mt-1">Try different keywords</div>
+                                </div>
+                            </div>
                         </>}
                 </div>
                 }
