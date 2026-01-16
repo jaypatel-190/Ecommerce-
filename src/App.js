@@ -10,7 +10,6 @@ import Login from "./pages/registration/Login";
 import Signup from "./pages/registration/Signup";
 import UserDashboard from "./pages/user/UserDashboard";
 import AdminDashboard from "./pages/admin/AdminDashboard";
-// import AddProduct from "./pages/admin/AddProduct";
 import AddProductPage from "./pages/admin/AddProductPage";
 import UpdateProductPage from "./pages/admin/UpdateProductPage";
 import MyState from "./context/myState";
@@ -32,7 +31,7 @@ const App = () => {
           <Route path="/allproduct" element={<Allproduct />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/category/:categoryname" element={<CategoryPage />} /> 
+          <Route path="/category/:categoryname" element={<CategoryPage />} />
           <Route
             path="/user-dashboard"
             element={
