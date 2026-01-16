@@ -157,6 +157,7 @@ function MyState({ children }) {
         getAllOrder,
         orderDelete,
         getAllUser,
+        getAllUserFunction,
       }}
     >
       {children}
