@@ -14,8 +14,6 @@ const HomePageProductCard = () => {
   const rawCartItems = useSelector((state) => state.cart) || [];
   const cartItems = useMemo(() => rawCartItems, [rawCartItems]);
 
-  // console.log(cartItems);
-
   const dispatch = useDispatch();
 
   //add to cart function
