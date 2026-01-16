@@ -1,9 +1,13 @@
 const Loader = () => {
   return (
-    <div role="status" className=" absolute">
+    <div
+      role="status"
+      aria-label="Loading content"
+      className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-75 z-50"
+    >
       <svg
         aria-hidden="true"
-        className="w-8 h-8 mr-2 text-pink-200 animate-spin fill-pink-500"
+        className="w-12 h-12 text-pink-200 animate-spin fill-pink-500"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +21,7 @@ const Loader = () => {
           fill="currentFill"
         />
       </svg>
-      <span className="sr-only">Loading...</span>
+      <span className="sr-only">Loading content, please wait...</span>
     </div>
   );
 };
