@@ -21,14 +21,14 @@ const Navbar = () => {
 
   // Logout function
   const logout = () => {
-    localStorage.clear("users");
+    localStorage.removeItem("users");
     toast.success("Logged out successfully!");
     navigate("/login");
   };
 
   // Cart items
   const cartItems = useSelector((state) => state.cart);
-  
+
   // Calculate total quantity of items in cart
   const totalCartQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
@@ -55,38 +55,34 @@ const Navbar = () => {
           <div className="center flex justify-center mb-4 lg:mb-0">
             <ul className="flex space-x-6 text-white font-medium text-md px-5">
               <li
-                className={`hover:text-gray-300 ${
-                  location.pathname === "/" ? "border-b-2 border-white" : ""
-                }`}
+                className={`hover:text-gray-300 ${location.pathname === "/" ? "border-b-2 border-white" : ""
+                  }`}
               >
                 <Link to={"/"}>Home</Link>
               </li>
               <li
-                className={`hover:text-gray-300 ${
-                  location.pathname === "/allproduct"
+                className={`hover:text-gray-300 ${location.pathname === "/allproduct"
                     ? "border-b-2 border-white"
                     : ""
-                }`}
+                  }`}
               >
                 <Link to={"/allproduct"}>All Product</Link>
               </li>
               {!user && (
                 <>
                   <li
-                    className={`hover:text-gray-300 ${
-                      location.pathname === "/signup"
+                    className={`hover:text-gray-300 ${location.pathname === "/signup"
                         ? "border-b-2 border-white"
                         : ""
-                    }`}
+                      }`}
                   >
                     <Link to={"/signup"}>Sign up</Link>
                   </li>
                   <li
-                    className={`hover:text-gray-300 ${
-                      location.pathname === "/login"
+                    className={`hover:text-gray-300 ${location.pathname === "/login"
                         ? "border-b-2 border-white"
                         : ""
-                    }`}
+                      }`}
                   >
                     <Link to={"/login"}>Login</Link>
                   </li>
