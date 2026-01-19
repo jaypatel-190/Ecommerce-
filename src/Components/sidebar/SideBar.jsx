@@ -85,8 +85,8 @@ const Sidebar = ({ toggleSidebar }) => {
               <Link
                 to="/signup"
                 className={`flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md ${location.pathname === "/signup"
-                    ? "border-b-2 border-white"
-                    : ""
+                  ? "border-b-2 border-white"
+                  : ""
                   }`}
               >
                 <span className="text-white font-medium text-lg">
@@ -119,6 +119,14 @@ const Sidebar = ({ toggleSidebar }) => {
               <div
                 className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md cursor-pointer"
                 onClick={logout}
+                role="button"
+                aria-label="Logout from your account"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    logout();
+                  }
+                }}
               >
                 <span className="text-white font-medium text-lg">Logout</span>
               </div>
