@@ -36,23 +36,40 @@ const Navbar = () => {
     <>
       {isSidebarOpen && <Sidebar toggleSidebar={toggleSidebar} />}
       <nav className="bg-pink-600 sticky top-0 z-10">
-        <div className="lg:flex lg:justify-between items-center py-3 lg:px-3">
+        <div className="lg:flex lg:justify-between items-center py-3 lg:px-3 px-4">
           {/* Left Section - Logo and Sidebar Toggle */}
-          <div className="left flex items-center py-3 lg:py-0">
-            <MenuIcon
-              className="mr-2 cursor-pointer text-white"
-              onClick={toggleSidebar}
-              aria-label="Toggle menu"
-            />
-            <Link to={"/"}>
-              <h2 className="font-bold text-white text-2xl text-center">
-                ShopWave
-              </h2>
-            </Link>
+          <div className="flex items-center justify-between w-full lg:w-auto">
+            <div className="flex items-center">
+              <MenuIcon
+                className="mr-2 cursor-pointer text-white"
+                onClick={toggleSidebar}
+                aria-label="Toggle menu"
+              />
+              <Link to={"/"}>
+                <h2 className="font-bold text-white text-2xl text-center">
+                  ShopWave
+                </h2>
+              </Link>
+            </div>
+
+            {/* Mobile Cart */}
+            <div className="lg:hidden">
+              <Link
+                to={"/cart"}
+                className="flex items-center text-white font-medium text-md relative"
+              >
+                <ShoppingCartIcon />
+                {totalCartQuantity > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    {totalCartQuantity}
+                  </span>
+                )}
+              </Link>
+            </div>
           </div>
 
           {/* Center Section - Navigation Links */}
-          <div className="center flex justify-center mb-4 lg:mb-0">
+          <div className="hidden lg:flex justify-center mb-4 lg:mb-0">
             <ul className="flex space-x-6 text-white font-medium text-md px-5">
               <li
                 className={`hover:text-gray-300 ${location.pathname === "/" ? "border-b-2 border-white" : ""
@@ -62,8 +79,8 @@ const Navbar = () => {
               </li>
               <li
                 className={`hover:text-gray-300 ${location.pathname === "/allproduct"
-                    ? "border-b-2 border-white"
-                    : ""
+                  ? "border-b-2 border-white"
+                  : ""
                   }`}
               >
                 <Link to={"/allproduct"}>All Product</Link>
@@ -72,16 +89,16 @@ const Navbar = () => {
                 <>
                   <li
                     className={`hover:text-gray-300 ${location.pathname === "/signup"
-                        ? "border-b-2 border-white"
-                        : ""
+                      ? "border-b-2 border-white"
+                      : ""
                       }`}
                   >
                     <Link to={"/signup"}>Sign up</Link>
                   </li>
                   <li
                     className={`hover:text-gray-300 ${location.pathname === "/login"
-                        ? "border-b-2 border-white"
-                        : ""
+                      ? "border-b-2 border-white"
+                      : ""
                       }`}
                   >
                     <Link to={"/login"}>Login</Link>
@@ -92,7 +109,7 @@ const Navbar = () => {
           </div>
 
           {/* Right Section - Functional Items */}
-          <div className="right flex justify-center items-center">
+          <div className="hidden lg:flex justify-center items-center space-x-4">
             <SearchBar />
 
             {/* Profile Component */}
@@ -101,7 +118,7 @@ const Navbar = () => {
             {/* Cart */}
             <Link
               to={"/cart"}
-              className="flex items-center text-white font-medium text-md ml-4 relative"
+              className="flex items-center text-white font-medium text-md relative"
             >
               <ShoppingCartIcon className="ml-2" />
               {totalCartQuantity > 0 && (

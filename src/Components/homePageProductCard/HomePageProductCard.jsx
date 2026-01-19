@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router";
 import myContext from "../../context/myContext";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 
 const HomePageProductCard = () => {
   const navigate = useNavigate();
+  const [loadedImages, setLoadedImages] = useState(new Set());
 
   const context = useContext(myContext);
   const { getAllProduct } = context;
@@ -15,6 +16,11 @@ const HomePageProductCard = () => {
   const cartItems = useMemo(() => rawCartItems, [rawCartItems]);
 
   const dispatch = useDispatch();
+
+  // Handle image load
+  const handleImageLoad = (imageId) => {
+    setLoadedImages(prev => new Set(prev).add(imageId));
+  };
 
   //add to cart function
   const addCart = (item) => {
@@ -50,12 +56,28 @@ const HomePageProductCard = () => {
               return (
                 <div key={index} className="p-4 w-full md:w-1/2 lg:w-1/4">
                   <div className="h-full border border-gray-300 rounded-xl overflow-hidden shadow-md cursor-pointer">
-                    <img
-                      onClick={() => navigate(`/productinfo/${id}`)}
-                      className="lg:h-80  h-96 w-full"
-                      src={productImageUrl}
-                      alt={`${title.substring(0, 25)} product image`}
-                    />
+                    <div className="relative lg:h-80 h-96 w-full bg-gray-100">
+                      {!loadedImages.has(id) && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                          <div className="animate-pulse">
+                            <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
+                          </div>
+                        </div>
+                      )}
+                      <img
+                        onClick={() => navigate(`/productinfo/${id}`)}
+                        className={`lg:h-80 h-96 w-full object-cover transition-opacity duration-300 ${loadedImages.has(id) ? 'opacity-100' : 'opacity-0'
+                          }`}
+                        src={productImageUrl}
+                        alt={`${title.substring(0, 25)} product image`}
+                        loading="lazy"
+                        onLoad={() => handleImageLoad(id)}
+                        onError={(e) => {
+                          e.target.src = 'https://via.placeholder.com/300x300?text=Image+Not+Found';
+                          handleImageLoad(id);
+                        }}
+                      />
+                    </div>
                     <div className="p-6">
                       <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                         ShopWave
