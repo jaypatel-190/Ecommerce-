@@ -1,70 +1,81 @@
-import React from "react";
+import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/home/Homepage";
-import NoPage from "./pages/nopage/NoPage";
-import ProductInfo from "./pages/productInfo/ProductInfo";
 import ScrollTop from "./Components/scrollTop/ScrollTop";
-import CartPage from "./pages/cart/CartPage";
-import Allproduct from "./pages/allProduct/Allproduct";
-import Login from "./pages/registration/Login";
-import Signup from "./pages/registration/Signup";
-import UserDashboard from "./pages/user/UserDashboard";
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import AddProductPage from "./pages/admin/AddProductPage";
-import UpdateProductPage from "./pages/admin/UpdateProductPage";
 import MyState from "./context/myState";
 import { Toaster } from "react-hot-toast";
 import { ProtectedRouteForAdmin } from "./protectedRoute/ProtectedRouteForAdmin";
 import { ProtectedRouteForUser } from "./protectedRoute/ProtectedRouteForUser";
-import CategoryPage from "./pages/category/CategoryPage";
+
+// Lazy load components
+const HomePage = lazy(() => import("./pages/home/Homepage"));
+const NoPage = lazy(() => import("./pages/nopage/NoPage"));
+const ProductInfo = lazy(() => import("./pages/productInfo/ProductInfo"));
+const CartPage = lazy(() => import("./pages/cart/CartPage"));
+const Allproduct = lazy(() => import("./pages/allProduct/Allproduct"));
+const Login = lazy(() => import("./pages/registration/Login"));
+const Signup = lazy(() => import("./pages/registration/Signup"));
+const UserDashboard = lazy(() => import("./pages/user/UserDashboard"));
+const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
+const AddProductPage = lazy(() => import("./pages/admin/AddProductPage"));
+const UpdateProductPage = lazy(() => import("./pages/admin/UpdateProductPage"));
+const CategoryPage = lazy(() => import("./pages/category/CategoryPage"));
+
+// Loading component
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center min-h-screen">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500"></div>
+  </div>
+);
 
 const App = () => {
   return (
     <MyState>
       <Router>
         <ScrollTop />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/*" element={<NoPage />} />
-          <Route path="/productinfo/:id" element={<ProductInfo />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/allproduct" element={<Allproduct />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/category/:categoryname" element={<CategoryPage />} />
-          <Route
-            path="/user-dashboard"
-            element={
-              <ProtectedRouteForUser>
-                <UserDashboard />
-              </ProtectedRouteForUser>
-            }
-          />
-          <Route
-            path="/admin-dashboard"
-            element={
-              <ProtectedRouteForAdmin>
-                <AdminDashboard />
-              </ProtectedRouteForAdmin>
-            }
-          />
-          <Route
-            path="/addproduct"
-            element={
-              <ProtectedRouteForAdmin>
-                <AddProductPage />
-              </ProtectedRouteForAdmin>
-            }
-          />
-          <Route
-            path="/updateproduct/:id"
-            element={
-              <ProtectedRouteForAdmin>
-                <UpdateProductPage />
-              </ProtectedRouteForAdmin>
-            }
-          />
-        </Routes>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/*" element={<NoPage />} />
+            <Route path="/productinfo/:id" element={<ProductInfo />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/allproduct" element={<Allproduct />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/category/:categoryname" element={<CategoryPage />} />
+            <Route
+              path="/user-dashboard"
+              element={
+                <ProtectedRouteForUser>
+                  <UserDashboard />
+                </ProtectedRouteForUser>
+              }
+            />
+            <Route
+              path="/admin-dashboard"
+              element={
+                <ProtectedRouteForAdmin>
+                  <AdminDashboard />
+                </ProtectedRouteForAdmin>
+              }
+            />
+            <Route
+              path="/addproduct"
+              element={
+                <ProtectedRouteForAdmin>
+                  <AddProductPage />
+                </ProtectedRouteForAdmin>
+              }
+            />
+            <Route
+              path="/updateproduct/:id"
+              element={
+                <ProtectedRouteForAdmin>
+                  <UpdateProductPage />
+                </ProtectedRouteForAdmin>
+              }
+            />
+          </Routes>
+        </Suspense>
         <Toaster />
       </Router>
     </MyState>
