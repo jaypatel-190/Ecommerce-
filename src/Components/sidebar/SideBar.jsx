@@ -44,7 +44,7 @@ const Sidebar = ({ toggleSidebar }) => {
   const navigate = useNavigate();
 
   const logout = () => {
-    localStorage.clear("users");
+    localStorage.removeItem("users");
     navigate("/login");
   };
 
@@ -84,11 +84,10 @@ const Sidebar = ({ toggleSidebar }) => {
             <>
               <Link
                 to="/signup"
-                className={`flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md ${
-                  location.pathname === "/signup"
+                className={`flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md ${location.pathname === "/signup"
                     ? "border-b-2 border-white"
                     : ""
-                }`}
+                  }`}
               >
                 <span className="text-white font-medium text-lg">
                   Login/Register
