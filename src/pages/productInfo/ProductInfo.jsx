@@ -123,7 +123,7 @@ const ProductInfo = () => {
       toast.success("Order placed successfully");
       closeModal();
     } catch (error) {
-      console.error('Error placing order:', error);
+      console.error('Error placing order for product:', product?.id, error);
       toast.error('Failed to place order');
     }
   };
