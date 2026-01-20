@@ -104,8 +104,8 @@ const CartPage = () => {
       dispatch(deleteAllFromCart());
       closeModal();
     } catch (error) {
-      console.error('Error placing order:', error);
-      toast.error('Failed to place order');
+      console.error('Error placing order:', error.message || error);
+      toast.error('Failed to place order. Please try again.');
     }
   };
 
