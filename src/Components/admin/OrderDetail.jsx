@@ -129,7 +129,7 @@ const OrderDetail = () => {
                   Action
                 </th>
               </tr>
-              {getAllOrder.map((order) => {
+              {getAllOrder.map((order, orderIndex) => {
                 return (
                   <>
                     {order.cartItems.map((item, index) => {
