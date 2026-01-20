@@ -54,6 +54,21 @@ const SearchBar = () => {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [search, selectedIndex, filterSearchData, navigate]);
 
+    // Click outside handler to close dropdown
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (inputRef.current && !inputRef.current.contains(event.target)) {
+                setSearch("");
+                setSelectedIndex(-1);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     // Reset selected index when search changes
     useEffect(() => {
         setSelectedIndex(-1);
