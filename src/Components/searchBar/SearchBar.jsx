@@ -85,7 +85,7 @@ const SearchBar = () => {
                                         onClick={() => navigate(`/productinfo/${item.id}`)}
                                         onMouseEnter={() => setSelectedIndex(index)}>
                                         <div className="flex items-center gap-2">
-                                            <img className="w-10" src={item.productImageUrl} alt={`Product image for ${item.title}`} />
+                                            <img className="w-10" src={item.productImageUrl} alt={`Product image for ${item.title}`} role="presentation" />
                                             {item.title}
                                         </div>
                                     </div>
