@@ -142,9 +142,9 @@ const OrderDetail = () => {
                         quantity,
                       } = item;
                       return (
-                        <tr key={index} className="text-pink-300">
+                        <tr key={`${orderIndex}-${index}`} className="text-pink-300">
                           <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 ">
-                            {index + 1}
+                            {getAllOrder.slice(0, orderIndex).reduce((acc, curr) => acc + curr.cartItems.length, 0) + index + 1}
                           </td>
 
                           <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 ">
@@ -202,7 +202,7 @@ const OrderDetail = () => {
                           <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
                             {order.date}
                           </td>
-                          
+
                           <td
                             onClick={() => orderDelete(order.id, item.id)}
                             className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer "
