@@ -30,8 +30,8 @@ const UserDashboard = () => {
             .filter((obj) => obj.userid === user?.uid)
             .map((order, index) => {
               return (
-                <div key={index}>
-                  {order.cartItems.map((item, index) => {
+                <div key={order.id || index}>
+                  {order.cartItems.map((item, itemIndex) => {
                     const {
                       id,
                       date,
@@ -44,7 +44,7 @@ const UserDashboard = () => {
                     const { status } = order;
                     return (
                       <div
-                        key={index}
+                        key={`${order.id}-${item.id || itemIndex}`}
                         className="mt-5 flex flex-col overflow-hidden rounded-xl border border-pink-100 md:flex-row"
                       >
                         {/* main 3  */}
