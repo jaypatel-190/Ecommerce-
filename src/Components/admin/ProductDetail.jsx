@@ -25,6 +25,7 @@ const ProductDetail = () => {
             getAllProductFunction();
             setLoading(false)
         } catch (error) {
+            console.error('Error deleting product:', id, error);
             toast.error('Failed to delete product')
             setLoading(false)
         }
