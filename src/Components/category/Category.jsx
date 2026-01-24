@@ -44,7 +44,7 @@ const Category = () => {
           <div className="flex ">
             {category.map((item, index) => {
               return (
-                <div key={index} className="px-3 lg:px-10">
+                <div key={item.name} className="px-3 lg:px-10">
                   <div
                     onClick={() => navigate(`/category/${item.name}`)}
                     className=" w-20 h-20 lg:w-24 lg:h-24  max-w-xs rounded-full  bg-pink-500 transition-all hover:bg-pink-400 cursor-pointer mb-1 "
