@@ -50,7 +50,7 @@ const Category = () => {
                     className=" w-20 h-20 lg:w-24 lg:h-24  max-w-xs rounded-full  bg-pink-500 transition-all hover:bg-pink-400 cursor-pointer mb-1 "
                   >
                     <div className="flex justify-center mb-12">
-                      <img src={item.image} alt={`Category ${item.name}`} />
+                      <img src={item.image} alt={`${item.name} category`} />
                     </div>
                   </div>
 
