@@ -54,7 +54,7 @@ const Navbar = () => {
 
             {/* Mobile Cart */}
             <div className="lg:hidden">
-              <CartIcon totalCartQuantity={totalCartQuantity} ariaLabel="View cart" />
+              <CartIcon totalCartQuantity={totalCartQuantity} ariaLabel="View shopping cart" />
             </div>
           </div>
 
@@ -106,7 +106,7 @@ const Navbar = () => {
             {user && <Profile user={user} logout={logout} />}
 
             {/* Cart */}
-            <CartIcon totalCartQuantity={totalCartQuantity} ariaLabel="View cart" />
+            <CartIcon totalCartQuantity={totalCartQuantity} ariaLabel="View shopping cart" />
           </div>
         </div>
       </nav>
