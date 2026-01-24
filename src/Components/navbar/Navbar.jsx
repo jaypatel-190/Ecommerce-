@@ -3,10 +3,10 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar";
 import Sidebar from "../sidebar/SideBar";
 import MenuIcon from "@mui/icons-material/Menu";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useSelector } from "react-redux";
 import Profile from "../profile/Profile";
 import toast from "react-hot-toast";
+import CartIcon from "./CIcon";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -54,17 +54,7 @@ const Navbar = () => {
 
             {/* Mobile Cart */}
             <div className="lg:hidden">
-              <Link
-                to={"/cart"}
-                className="flex items-center text-white font-medium text-md relative"
-              >
-                <ShoppingCartIcon className="ml-2" />
-                {totalCartQuantity > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                    {totalCartQuantity}
-                  </span>
-                )}
-              </Link>
+              <CartIcon totalCartQuantity={totalCartQuantity} />
             </div>
           </div>
 
@@ -116,17 +106,7 @@ const Navbar = () => {
             {user && <Profile user={user} logout={logout} />}
 
             {/* Cart */}
-            <Link
-              to={"/cart"}
-              className="flex items-center text-white font-medium text-md relative"
-            >
-              <ShoppingCartIcon className="ml-2" />
-              {totalCartQuantity > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {totalCartQuantity}
-                </span>
-              )}
-            </Link>
+            <CartIcon totalCartQuantity={totalCartQuantity} />
           </div>
         </div>
       </nav>
