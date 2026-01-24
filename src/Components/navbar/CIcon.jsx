@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-const CartIcon = ({ totalCartQuantity }) => {
+const CartIcon = ({ totalCartQuantity, ariaLabel = "View cart" }) => {
   return (
     <Link
       to={"/cart"}
       className="flex items-center text-white font-medium text-md relative"
+      aria-label={ariaLabel}
     >
       <ShoppingCartIcon className="ml-2" />
       {totalCartQuantity > 0 && (
