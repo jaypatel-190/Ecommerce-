@@ -176,6 +176,7 @@ const CartPage = () => {
                               onClick={() => handleDecrement(id)}
                               type="button"
                               className="h-7 w-7"
+                              aria-label="Decrease quantity"
                             >
                               -
                             </button>
@@ -189,6 +190,7 @@ const CartPage = () => {
                               onClick={() => handleIncrement(id)}
                               type="button"
                               className="flex h-7 w-7 items-center justify-center"
+                              aria-label="Increase quantity"
                             >
                               +
                             </button>
@@ -198,6 +200,7 @@ const CartPage = () => {
                               onClick={() => deleteCart(item)}
                               type="button"
                               className="flex items-center space-x-1 px-2 py-1 pl-0"
+                              aria-label="Remove item from cart"
                             >
                               <DeleteIcon size={12} className="text-red-500" />
                               <span className="text-xs font-medium text-red-500">
