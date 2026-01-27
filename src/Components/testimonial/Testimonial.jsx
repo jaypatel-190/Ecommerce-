@@ -6,12 +6,21 @@ import { useState, useEffect } from "react";
 
 const Testimonial = () => {
   const [loading, setLoading] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 300);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Auto-rotate testimonials every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   if (loading) {
@@ -58,7 +67,37 @@ const Testimonial = () => {
           {/* para  */}
           <h2 className=' text-center text-2xl font-semibold mb-10' >What our <span className=' text-pink-500'>customers</span> are saying</h2>
 
-          <div className="flex flex-wrap -m-4">
+          {/* Mobile: Show one testimonial at a time with auto-rotation */}
+          <div className="lg:hidden flex flex-col items-center">
+            <div className="w-full max-w-md p-6 text-center">
+              <img 
+                alt={testimonials[currentIndex].altText} 
+                className="w-20 h-20 mb-6 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" 
+                src={testimonials[currentIndex].image} 
+              />
+              <p className="leading-relaxed mb-4">{testimonials[currentIndex].quote}</p>
+              <span className="inline-block h-1 w-10 rounded bg-pink-500 mb-4" />
+              <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase">{testimonials[currentIndex].name}</h2>
+              <p className="text-gray-500">{testimonials[currentIndex].title}</p>
+            </div>
+            
+            {/* Navigation dots */}
+            <div className="flex space-x-2 mt-6">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-3 h-3 rounded-full ${
+                    index === currentIndex ? 'bg-pink-500' : 'bg-gray-300'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Show all testimonials */}
+          <div className="hidden lg:flex flex-wrap -m-4">
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="lg:w-1/3 lg:mb-0 mb-6 p-4">
                 <div className="h-full text-center">
