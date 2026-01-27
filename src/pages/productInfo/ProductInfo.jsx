@@ -169,7 +169,7 @@ const ProductInfo = () => {
                     {cartItems.some((p) => p.id === product.id) ? (
                       <button
                         onClick={() => deleteCart(product)}
-                        className="w-full px-4 py-3 text-center text-white bg-red-500 border border--600  hover:bg-red-600 hover:text-gray-100 rounded-xl"
+                        className="w-full px-4 py-3 text-center text-white bg-red-500 border border-red-600 hover:bg-red-600 hover:text-gray-100 rounded-xl"
                       >
                         Delete from cart
                       </button>
