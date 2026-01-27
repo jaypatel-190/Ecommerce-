@@ -1,9 +1,26 @@
 import testimonial1 from "../../assets/testimonial/testimonial1.png";
 import testimonial2 from "../../assets/testimonial/testimonial2.png";
 import testimonial3 from "../../assets/testimonial/testimonial3.png";
+import { useState, useEffect } from "react";
 
 
 const Testimonial = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-64">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-pink-500"></div>
+      </div>
+    );
+  }
   const testimonials = [
     {
       id: 1,
