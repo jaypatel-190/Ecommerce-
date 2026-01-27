@@ -1,7 +1,7 @@
 import testimonial1 from "../../assets/testimonial/testimonial1.png";
 import testimonial2 from "../../assets/testimonial/testimonial2.png";
 import testimonial3 from "../../assets/testimonial/testimonial3.png";
-/* eslint-disable react/no-unescaped-entities */
+
 
 const Testimonial = () => {
   const testimonials = [
