@@ -70,28 +70,31 @@ const Testimonial = () => {
 
           {/* Mobile: Show one testimonial at a time with auto-rotation */}
           <div className="lg:hidden flex flex-col items-center">
-            <div className="w-full max-w-md p-6 text-center">
-              <img 
-                alt={testimonials[currentIndex].altText} 
-                className="w-20 h-20 mb-6 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" 
-                src={testimonials[currentIndex].image} 
+            <div className="w-full max-w-md p-6 text-center" id={`testimonial-${currentIndex}`} role="tabpanel" aria-labelledby={`tab-${currentIndex}`}>
+              <img
+                alt={testimonials[currentIndex].altText}
+                className="w-20 h-20 mb-6 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+                src={testimonials[currentIndex].image}
               />
               <p className="leading-relaxed mb-4">{testimonials[currentIndex].quote}</p>
               <span className="inline-block h-1 w-10 rounded bg-pink-500 mb-4" />
               <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase">{testimonials[currentIndex].name}</h2>
               <p className="text-gray-500">{testimonials[currentIndex].title}</p>
             </div>
-            
+
             {/* Navigation dots */}
-            <div className="flex space-x-2 mt-6">
+            <div className="flex space-x-2 mt-6" role="tablist" aria-label="Testimonial navigation">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
+                  id={`tab-${index}`}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full ${
-                    index === currentIndex ? 'bg-pink-500' : 'bg-gray-300'
-                  }`}
+                  className={`w-3 h-3 rounded-full ${index === currentIndex ? 'bg-pink-500' : 'bg-gray-300'
+                    }`}
+                  role="tab"
                   aria-label={`Go to testimonial ${index + 1}`}
+                  aria-selected={index === currentIndex}
+                  aria-controls={`testimonial-${index}`}
                 />
               ))}
             </div>
@@ -102,10 +105,10 @@ const Testimonial = () => {
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="lg:w-1/3 lg:mb-0 mb-6 p-4">
                 <div className="h-full text-center">
-                  <img 
-                    alt={testimonial.altText} 
-                    className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" 
-                    src={testimonial.image} 
+                  <img
+                    alt={testimonial.altText}
+                    className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+                    src={testimonial.image}
                   />
                   <p className="leading-relaxed">{testimonial.quote}</p>
                   <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
