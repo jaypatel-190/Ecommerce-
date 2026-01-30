@@ -53,26 +53,28 @@ const Track = () => {
     return (
         <section className="py-10 md:py-14" aria-labelledby="features-heading">
             <div className="container mx-auto px-5">
-                <h2 id="features-heading" className="sr-only">Our Features</h2>
-                <div className="flex flex-wrap -m-4 text-center">
+                <h2 id="features-heading" className="text-3xl font-bold text-center mb-8 text-gray-900">Why Choose Us</h2>
+                <div className="flex flex-wrap -m-4 text-center" role="list" aria-label="Our features">
                     {features.map((feature, index) => (
-                        <div key={index} className="p-4 md:w-1/3 sm:w-1/2 w-full">
-                            <div className="border-4 hover:shadow-xl hover:shadow-pink-200 border-gray-200 bg-gray-100 px-4 py-6 rounded-lg shadow-md transition-all duration-300">
-                                <svg
-                                    className="w-12 h-12 mb-3 text-pink-600 mx-auto"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    strokeWidth={1.5}
-                                    aria-hidden="true"
-                                    aria-label={`${feature.title} icon`}
-                                >
-                                    {feature.icon}
-                                </svg>
-                                <h3 className="text-lg font-medium text-gray-900">{feature.title}</h3>
-                                <p className="leading-relaxed text-gray-600">{feature.description}</p>
-                            </div>
+                        <div key={index} className="p-4 md:w-1/3 sm:w-1/2 w-full" role="listitem">
+                            <article className="border-4 hover:shadow-xl hover:shadow-pink-200 border-gray-200 bg-gray-100 px-4 py-6 rounded-lg shadow-md transition-all duration-300 focus-within:ring-2 focus-within:ring-pink-300 focus-within:ring-offset-2">
+                                <div className="flex flex-col items-center">
+                                    <svg
+                                        className="w-12 h-12 mb-3 text-pink-600"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        strokeWidth={1.5}
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        {feature.icon}
+                                    </svg>
+                                    <h3 className="text-lg font-medium text-gray-900">{feature.title}</h3>
+                                    <p className="leading-relaxed text-gray-600 mt-2">{feature.description}</p>
+                                </div>
+                            </article>
                         </div>
                     ))}
                 </div>
