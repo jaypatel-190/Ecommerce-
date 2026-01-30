@@ -66,6 +66,7 @@ const Track = () => {
                                     stroke="currentColor"
                                     strokeWidth={1.5}
                                     aria-hidden="true"
+                                    aria-label={`${feature.title} icon`}
                                 >
                                     {feature.icon}
                                 </svg>

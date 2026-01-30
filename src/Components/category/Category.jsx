@@ -41,15 +41,24 @@ const Category = () => {
     <div>
       <div className="flex flex-col mt-5">
         <div className="flex overflow-x-scroll lg:justify-center no-scrollbar">
-          <div className="flex ">
+          <div className="flex " role="list" aria-label="Product categories">
             {category.map((item, index) => {
               return (
-                <div key={item.name} className="px-3 lg:px-10">
+                <div key={item.name} className="px-3 lg:px-10" role="listitem">
                   <div
                     onClick={() => navigate(`/category/${item.name}`)}
-                    className=" w-20 h-20 lg:w-24 lg:h-24  max-w-xs rounded-full  bg-pink-500 transition-all hover:bg-pink-400 cursor-pointer mb-1 flex items-center justify-center "
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        navigate(`/category/${item.name}`);
+                      }
+                    }}
+                    className=" w-20 h-20 lg:w-24 lg:h-24  max-w-xs rounded-full  bg-pink-500 transition-all hover:bg-pink-400 cursor-pointer mb-1 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-offset-2 "
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`Browse ${item.name} category`}
                   >
-                    <img src={item.image} alt={`${item.name} category`} />
+                    <img src={item.image} alt={`${item.name} category`} loading="lazy" />
                   </div>
 
                   <h1 className=" text-sm lg:text-lg text-center font-medium title-font ">
