@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
 
-const category = [
+const categories = [
   {
     image: "https://cdn-icons-png.flaticon.com/256/4359/4359963.png",
     name: "Fashion",
@@ -42,7 +42,7 @@ const Category = () => {
       <div className="flex flex-col mt-5">
         <div className="flex overflow-x-scroll lg:justify-center no-scrollbar">
           <div className="flex " role="list" aria-label="Product categories">
-            {category.map((item, index) => {
+            {categories.map((item, index) => {
               return (
                 <div key={item.name} className="px-3 lg:px-10" role="listitem">
                   <div
