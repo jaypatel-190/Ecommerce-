@@ -47,11 +47,9 @@ const Category = () => {
                 <div key={item.name} className="px-3 lg:px-10">
                   <div
                     onClick={() => navigate(`/category/${item.name}`)}
-                    className=" w-20 h-20 lg:w-24 lg:h-24  max-w-xs rounded-full  bg-pink-500 transition-all hover:bg-pink-400 cursor-pointer mb-1 "
+                    className=" w-20 h-20 lg:w-24 lg:h-24  max-w-xs rounded-full  bg-pink-500 transition-all hover:bg-pink-400 cursor-pointer mb-1 flex items-center justify-center "
                   >
-                    <div className="flex justify-center mb-12">
-                      <img src={item.image} alt={`${item.name} category`} />
-                    </div>
+                    <img src={item.image} alt={`${item.name} category`} />
                   </div>
 
                   <h1 className=" text-sm lg:text-lg text-center font-medium title-font ">
