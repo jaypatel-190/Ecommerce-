@@ -5,6 +5,22 @@ const UserDetail = () => {
     const context = useContext(myContext);
     const { getAllUser } = context;
 
+    // Function to format date in a readable way
+    const formatDate = (dateString) => {
+        if (!dateString) return 'N/A';
+
+        try {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        } catch (error) {
+            return dateString;
+        }
+    };
+
     if (!getAllUser || getAllUser.length === 0) {
         return (
             <div className="flex flex-col items-center justify-center py-20">
@@ -94,7 +110,7 @@ const UserDetail = () => {
                                             </td>
 
                                             <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 cursor-pointer ">
-                                                {value.date}
+                                                {formatDate(value.date)}
                                             </td>
                                         </tr>
                                     )
