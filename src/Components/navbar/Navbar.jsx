@@ -6,7 +6,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useSelector } from "react-redux";
 import Profile from "../profile/Profile";
 import toast from "react-hot-toast";
-import CartIcon from "./CIcon";
+import CIcon from "./CIcon";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -54,7 +54,7 @@ const Navbar = () => {
 
             {/* Mobile Cart */}
             <div className="lg:hidden">
-              <CartIcon totalCartQuantity={totalCartQuantity} ariaLabel="View shopping cart" />
+              <CIcon totalCartQuantity={totalCartQuantity} ariaLabel="View shopping cart" />
             </div>
           </div>
 
@@ -106,7 +106,7 @@ const Navbar = () => {
             {user && <Profile user={user} logout={logout} />}
 
             {/* Cart */}
-            <CartIcon totalCartQuantity={totalCartQuantity} ariaLabel="View shopping cart" />
+            <CIcon totalCartQuantity={totalCartQuantity} ariaLabel="View shopping cart" />
           </div>
         </div>
       </nav>

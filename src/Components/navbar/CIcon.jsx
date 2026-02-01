@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-const CartIcon = ({ totalCartQuantity, ariaLabel = "View cart" }) => {
+const CIcon = ({ totalCartQuantity, ariaLabel = "View cart" }) => {
   return (
     <Link
       to={"/cart"}
@@ -19,4 +19,4 @@ const CartIcon = ({ totalCartQuantity, ariaLabel = "View cart" }) => {
   );
 };
 
-export default CartIcon;
+export default CIcon;
