@@ -18,15 +18,15 @@ const NoPage = () => {
                 <nav className="space-y-4" aria-label="Navigation">
                     <button
                         onClick={() => navigate('/')}
-                        className="inline-flex items-center px-6 py-3 bg-pink-500 text-white font-medium rounded-lg hover:bg-pink-600 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                        className="inline-flex items-center px-6 py-3 bg-pink-500 text-white font-medium rounded-lg hover:bg-pink-600 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
                     >
                         <svg
                             className="w-5 h-5 mr-2"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
-                            role="img"
-                            aria-label="home icon"
+                            role="presentation"
+                            aria-hidden="true"
                         >
                             <path
                                 strokeLinecap="round"
@@ -42,7 +42,7 @@ const NoPage = () => {
                         Or{' '}
                         <button
                             onClick={() => window.history.back()}
-                            className="text-pink-500 hover:text-pink-600 font-medium underline"
+                            className="text-pink-500 hover:text-pink-600 font-medium underline focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 rounded"
                         >
                             go back to the previous page
                         </button>
