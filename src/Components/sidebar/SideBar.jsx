@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import { useLocation } from "react-router-dom";
@@ -38,14 +38,25 @@ const category = [
   },
 ];
 
+const FallbackIcon = ({ name }) => (
+  <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+    {name.charAt(0).toUpperCase()}
+  </div>
+);
+
 const Sidebar = ({ toggleSidebar }) => {
   const user = JSON.parse(localStorage.getItem("users"));
   const location = useLocation();
   const navigate = useNavigate();
+  const [failedImages, setFailedImages] = useState(new Set());
 
   const logout = () => {
     localStorage.removeItem("users");
     navigate("/login");
+  };
+
+  const handleImageError = (categoryName) => {
+    setFailedImages(prev => new Set(prev).add(categoryName));
   };
 
   return (
@@ -78,7 +89,16 @@ const Sidebar = ({ toggleSidebar }) => {
               to={`/category/${item.name}`}
               className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md"
             >
-              <img src={item.image} alt={`Category ${item.name}`} className="w-10 h-10" />
+              {failedImages.has(item.name) ? (
+                <FallbackIcon name={item.name} />
+              ) : (
+                <img
+                  src={item.image}
+                  alt={`Category ${item.name}`}
+                  className="w-10 h-10"
+                  onError={() => handleImageError(item.name)}
+                />
+              )}
               <span className="text-white font-medium text-lg">{item.name}</span>
             </Link>
           ))}
