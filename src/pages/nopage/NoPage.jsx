@@ -5,8 +5,8 @@ const NoPage = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-            <div className="text-center">
+        <main className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+            <section className="text-center">
                 <div className="mb-8">
                     <h1 className="text-9xl font-bold text-pink-500 mb-4">404</h1>
                     <h2 className="text-3xl font-semibold text-gray-800 mb-4">Page Not Found</h2>
@@ -15,7 +15,7 @@ const NoPage = () => {
                     </p>
                 </div>
 
-                <div className="space-y-4">
+                <nav className="space-y-4" aria-label="Navigation">
                     <button
                         onClick={() => navigate('/')}
                         className="inline-flex items-center px-6 py-3 bg-pink-500 text-white font-medium rounded-lg hover:bg-pink-600 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
@@ -47,9 +47,9 @@ const NoPage = () => {
                             go back to the previous page
                         </button>
                     </div>
-                </div>
-            </div>
-        </div>
+                </nav>
+            </section>
+        </main>
     );
 };
 
