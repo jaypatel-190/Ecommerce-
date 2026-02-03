@@ -8,6 +8,7 @@ const CIcon = ({ totalCartQuantity, ariaLabel = "View cart" }) => {
       to={"/cart"}
       className="flex items-center text-white font-medium text-md relative"
       aria-label={ariaLabel}
+      title="Shopping Cart"
     >
       <ShoppingCartIcon className="ml-2" />
       {totalCartQuantity > 0 && (
