@@ -25,7 +25,8 @@ const NoPage = () => {
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
-                            aria-hidden="true"
+                            role="img"
+                            aria-label="home icon"
                         >
                             <path
                                 strokeLinecap="round"
