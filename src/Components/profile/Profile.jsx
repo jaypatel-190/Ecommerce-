@@ -49,10 +49,20 @@ const Profile = ({ user, logout }) => {
           <li
             className="py-2 px-4 hover:bg-gray-100 relative"
             onClick={toggleUserInfoDropdown}
+            role="button"
+            aria-label={`${user.role || 'user'} information`}
+            aria-expanded={isUserInfoDropdownOpen}
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleUserInfoDropdown();
+              }
+            }}
           >
             {user.role || 'user'} Info
             {isUserInfoDropdownOpen && (
-              <ul className="absolute top-0 right-full text-black w-max bg-white border border-gray-200 rounded-md shadow-md z-10 pointer-events-none">
+              <ul className="absolute top-0 right-full text-black w-max bg-white border border-gray-200 rounded-md shadow-md z-10">
                 <li className="py-2 px-4">{`First Name: ${user.firstName || 'N/A'}`}</li>
                 <li className="py-2 px-4">{`Last Name: ${user.lastName || 'N/A'}`}</li>
                 <li className="py-2 px-4">{`Date: ${user.date || 'N/A'}`}</li>
@@ -60,7 +70,19 @@ const Profile = ({ user, logout }) => {
               </ul>
             )}
           </li>
-          <li className="py-2 px-4 hover:bg-gray-100" onClick={logout}>
+          <li
+            className="py-2 px-4 hover:bg-gray-100"
+            onClick={logout}
+            role="button"
+            aria-label="Logout from your account"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                logout();
+              }
+            }}
+          >
             Logout
           </li>
         </ul>
