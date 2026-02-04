@@ -27,6 +27,17 @@ const Profile = ({ user, logout }) => {
       <div
         className="flex items-center text-white font-medium text-md ml-4 "
         onClick={toggleDropdown}
+        role="button"
+        aria-label="User profile menu"
+        aria-expanded={isDropdownOpen}
+        aria-haspopup="true"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleDropdown();
+          }
+        }}
       >
         <AccountCircleIcon className="ml-2" />
         <span className="ml-1">{user.firstName || 'User'}</span>
