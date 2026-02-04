@@ -74,6 +74,7 @@ const Sidebar = ({ toggleSidebar }) => {
             <CloseIcon
               className="mr-2 cursor-pointer text-white"
               onClick={toggleSidebar}
+              title="Close menu"
             />
             <h2 className="font-bold text-white text-2xl text-center">Menu</h2>
           </div>
