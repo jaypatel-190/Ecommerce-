@@ -45,7 +45,7 @@ const Navbar = () => {
                 onClick={toggleSidebar}
                 aria-label="Toggle menu"
               />
-              <Link to={"/"}>
+              <Link to={"/"} aria-label="ShopWave - Navigate to home page">
                 <h2 className="font-bold text-white text-2xl text-center">
                   ShopWave
                 </h2>
@@ -65,7 +65,7 @@ const Navbar = () => {
                 className={`hover:text-gray-300 ${location.pathname === "/" ? "border-b-2 border-white" : ""
                   }`}
               >
-                <Link to={"/"}>Home</Link>
+                <Link to={"/"} aria-label="Navigate to home page">Home</Link>
               </li>
               <li
                 className={`hover:text-gray-300 ${location.pathname === "/allproduct"
@@ -73,7 +73,7 @@ const Navbar = () => {
                   : ""
                   }`}
               >
-                <Link to={"/allproduct"}>All Product</Link>
+                <Link to={"/allproduct"} aria-label="View all products">All Product</Link>
               </li>
               {!user && (
                 <>
@@ -83,7 +83,7 @@ const Navbar = () => {
                       : ""
                       }`}
                   >
-                    <Link to={"/signup"}>Sign up</Link>
+                    <Link to={"/signup"} aria-label="Create a new account">Sign up</Link>
                   </li>
                   <li
                     className={`hover:text-gray-300 ${location.pathname === "/login"
@@ -91,7 +91,7 @@ const Navbar = () => {
                       : ""
                       }`}
                   >
-                    <Link to={"/login"}>Login</Link>
+                    <Link to={"/login"} aria-label="Sign in to your account">Login</Link>
                   </li>
                 </>
               )}
