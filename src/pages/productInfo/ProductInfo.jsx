@@ -95,6 +95,12 @@ const ProductInfo = () => {
       return toast.error("All fields are required");
     }
 
+    // Validate mobile number (should be 10 digits)
+    const mobileRegex = /^[0-9]{10}$/;
+    if (!mobileRegex.test(addressInfo.mobileNumber)) {
+      return toast.error("Please enter a valid 10-digit mobile number");
+    }
+
     const user = JSON.parse(localStorage.getItem("users"));
     const orderInfo = {
       cartItems,
@@ -275,12 +281,14 @@ const ProductInfo = () => {
                               name="mobileNumber"
                               value={addressInfo.mobileNumber}
                               onChange={(e) => {
+                                const value = e.target.value.replace(/\D/g, '').slice(0, 10);
                                 setAddressInfo({
                                   ...addressInfo,
-                                  mobileNumber: e.target.value,
+                                  mobileNumber: value,
                                 });
                               }}
                               placeholder="Enter your mobile number"
+                              maxLength={10}
                               className="bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 placeholder-pink-300"
                             />
                           </div>
