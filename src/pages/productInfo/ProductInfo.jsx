@@ -271,7 +271,7 @@ const ProductInfo = () => {
                           </div>
                           <div className="mb-3">
                             <input
-                              type="number"
+                              type="tel"
                               name="mobileNumber"
                               value={addressInfo.mobileNumber}
                               onChange={(e) => {
