@@ -154,7 +154,7 @@ const Sidebar = ({ toggleSidebar }) => {
                   </Link>
                 )}
                 <div
-                  className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md cursor-pointer"
+                  className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600"
                   onClick={logout}
                   role="menuitem"
                   aria-label="Logout from your account"
