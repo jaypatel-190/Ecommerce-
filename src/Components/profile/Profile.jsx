@@ -93,7 +93,7 @@ const Profile = ({ user, logout }) => {
             )}
           </li>
           <li
-            className="py-2 px-4 hover:bg-gray-100"
+            className="py-2 px-4 hover:bg-gray-100 cursor-pointer"
             onClick={logout}
             role="menuitem"
             aria-label="Logout from your account"
