@@ -65,7 +65,10 @@ const Sidebar = ({ toggleSidebar }) => {
         className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
         onClick={toggleSidebar}
       />
-      <div className="w-64 bg-pink-600 h-screen fixed top-0 left-0 z-50 overflow-y-auto scrollbar-thin scrollbar-thumb-pink-700 scrollbar-track-pink-100 transform transition-transform duration-300 ease-in-out lg:translate-x-0 translate-x-0">
+      <div className="w-64 bg-pink-600 h-screen fixed top-0 left-0 z-50 overflow-y-auto scrollbar-thin scrollbar-thumb-pink-700 scrollbar-track-pink-100 transform transition-transform duration-300 ease-in-out lg:translate-x-0 translate-x-0"
+        role="navigation"
+        aria-label="Main navigation menu"
+      >
         <div className="flex flex-col mt-5 p-5 space-y-4">
           {/* Sidebar header */}
           <div className="left flex items-center py-3 lg:py-0">
@@ -87,7 +90,9 @@ const Sidebar = ({ toggleSidebar }) => {
             <Link
               key={index}
               to={`/category/${item.name}`}
-              className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md"
+              className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600"
+              aria-label={`Browse ${item.name} category`}
+              role="menuitem"
             >
               {failedImages.has(item.name) ? (
                 <FallbackIcon name={item.name} />
@@ -110,10 +115,12 @@ const Sidebar = ({ toggleSidebar }) => {
               <>
                 <Link
                   to="/signup"
-                  className={`flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md ${location.pathname === "/signup"
+                  className={`flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600 ${location.pathname === "/signup"
                     ? "border-b-2 border-white"
                     : ""
                     }`}
+                  aria-label="Go to login and registration page"
+                  role="menuitem"
                 >
                   <span className="text-white font-medium text-lg">
                     Login/Register
@@ -125,7 +132,9 @@ const Sidebar = ({ toggleSidebar }) => {
                 {user.role === "user" && (
                   <Link
                     to="/user-dashboard"
-                    className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md cursor-pointer"
+                    className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600"
+                    aria-label="Go to user dashboard"
+                    role="menuitem"
                   >
                     <span className="text-white font-medium text-lg">
                       User Dashboard
@@ -135,7 +144,9 @@ const Sidebar = ({ toggleSidebar }) => {
                 {user.role === "admin" && (
                   <Link
                     to="/admin-dashboard"
-                    className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md"
+                    className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600"
+                    aria-label="Go to admin dashboard"
+                    role="menuitem"
                   >
                     <span className="text-white font-medium text-lg">
                       Admin Dashboard
