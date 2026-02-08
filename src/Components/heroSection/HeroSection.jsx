@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <div className="relative w-full overflow-hidden">
       {!imageLoaded && !imageError && (
-        <div className="absolute inset-0 bg-gradient-to-r from-pink-100 to-purple-100 animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-r from-pink-100 to-purple-100 animate-pulse" aria-hidden="true" />
       )}
       <img
         className={`w-full h-auto object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
@@ -20,8 +20,8 @@ const HeroSection = () => {
         onError={() => setImageError(true)}
       />
       {imageError && (
-        <div className="w-full h-64 bg-gradient-to-r from-pink-200 to-purple-200 flex items-center justify-center">
-          <p className="text-gray-600 text-lg">ShopWave - Your Premium Shopping Destination</p>
+        <div className="w-full h-64 bg-gradient-to-r from-pink-200 to-purple-200 flex items-center justify-center" role="img" aria-label="ShopWave banner placeholder">
+          <p className="text-gray-600 text-lg font-medium">ShopWave - Your Premium Shopping Destination</p>
         </div>
       )}
     </div>
