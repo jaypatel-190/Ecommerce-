@@ -156,11 +156,12 @@ const Sidebar = ({ toggleSidebar }) => {
                 <div
                   className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md cursor-pointer"
                   onClick={logout}
-                  role="button"
+                  role="menuitem"
                   aria-label="Logout from your account"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
                       logout();
                     }
                   }}

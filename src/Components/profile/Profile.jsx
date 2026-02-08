@@ -43,16 +43,26 @@ const Profile = ({ user, logout }) => {
         <span className="ml-1">{user.firstName || 'User'}</span>
       </div>
       {isDropdownOpen && (
-        <ul className="absolute top-full left-0 text-black bg-white border border-gray-200 rounded-md shadow-md z-10">
-          <li className="py-2 px-4 hover:bg-gray-100">
+        <ul className="absolute top-full left-0 text-black bg-white border border-gray-200 rounded-md shadow-md z-10" role="menu">
+          <li className="py-2 px-4 hover:bg-gray-100" role="none">
             {user.role === "user" && (
-              <Link to={"/user-dashboard"} onClick={toggleDropdown}>
+              <Link
+                to={"/user-dashboard"}
+                onClick={toggleDropdown}
+                role="menuitem"
+                aria-label="Navigate to user dashboard"
+              >
                 Dashboard
               </Link>
             )}
 
             {user.role === "admin" && (
-              <Link to={"/admin-dashboard"} onClick={toggleDropdown}>
+              <Link
+                to={"/admin-dashboard"}
+                onClick={toggleDropdown}
+                role="menuitem"
+                aria-label="Navigate to admin dashboard"
+              >
                 Dashboard
               </Link>
             )}
@@ -60,9 +70,10 @@ const Profile = ({ user, logout }) => {
           <li
             className="py-2 px-4 hover:bg-gray-100 relative"
             onClick={toggleUserInfoDropdown}
-            role="button"
+            role="menuitem"
             aria-label={`${user.role || 'user'} information`}
             aria-expanded={isUserInfoDropdownOpen}
+            aria-haspopup="true"
             tabIndex={0}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
@@ -73,18 +84,18 @@ const Profile = ({ user, logout }) => {
           >
             {user.role || 'user'} Info
             {isUserInfoDropdownOpen && (
-              <ul className="absolute top-0 right-full text-black w-max bg-white border border-gray-200 rounded-md shadow-md z-10">
-                <li className="py-2 px-4">{`First Name: ${user.firstName || 'N/A'}`}</li>
-                <li className="py-2 px-4">{`Last Name: ${user.lastName || 'N/A'}`}</li>
-                <li className="py-2 px-4">{`Date: ${user.date || 'N/A'}`}</li>
-                <li className="py-2 px-4">{`Contact Number: ${user.contactNumber || 'N/A'}`}</li>
+              <ul className="absolute top-0 right-full text-black w-max bg-white border border-gray-200 rounded-md shadow-md z-10" role="menu">
+                <li className="py-2 px-4" role="none">{`First Name: ${user.firstName || 'N/A'}`}</li>
+                <li className="py-2 px-4" role="none">{`Last Name: ${user.lastName || 'N/A'}`}</li>
+                <li className="py-2 px-4" role="none">{`Date: ${user.date || 'N/A'}`}</li>
+                <li className="py-2 px-4" role="none">{`Contact Number: ${user.contactNumber || 'N/A'}`}</li>
               </ul>
             )}
           </li>
           <li
             className="py-2 px-4 hover:bg-gray-100"
             onClick={logout}
-            role="button"
+            role="menuitem"
             aria-label="Logout from your account"
             tabIndex={0}
             onKeyDown={(e) => {
