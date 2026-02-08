@@ -20,6 +20,9 @@ function MyState({ children }) {
   // User State
   const [getAllProduct, setGetAllProduct] = useState([]);
 
+  // App Configuration
+  const brandName = "ShopWave";
+
   /**========================================================================
    *                          GET All Product Function
    *========================================================================**/
@@ -158,6 +161,7 @@ function MyState({ children }) {
         orderDelete,
         getAllUser,
         getAllUserFunction,
+        brandName,
       }}
     >
       {children}

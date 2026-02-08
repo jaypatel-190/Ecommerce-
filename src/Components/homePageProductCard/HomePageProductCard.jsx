@@ -19,7 +19,7 @@ const HomePageProductCard = () => {
   const [loadingItemId, setLoadingItemId] = useState(null);
 
   const context = useContext(myContext);
-  const { getAllProduct } = context;
+  const { getAllProduct, brandName } = context;
 
   const rawCartItems = useSelector((state) => state.cart) || [];
   const cartItems = useMemo(() => rawCartItems, [rawCartItems]);
@@ -108,7 +108,7 @@ const HomePageProductCard = () => {
                         </div>
                         <div className="p-6">
                           <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                            ShopWave
+                            {brandName}
                           </h2>
                           <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                             {title.substring(0, 25)}
