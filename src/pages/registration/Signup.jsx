@@ -177,7 +177,7 @@ const Signup = () => {
                                 password: e.target.value
                             })
                         }}
-                        className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200 pr-10'
+                        className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200 pr-12 focus:border-pink-300 focus:ring-1 focus:ring-pink-300 transition-all duration-200'
                     />
                     <EyeIcon
                         show={showPassword}
@@ -199,7 +199,7 @@ const Signup = () => {
                                 confirmPassword: e.target.value
                             })
                         }}
-                        className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200 pr-10'
+                        className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200 pr-12 focus:border-pink-300 focus:ring-1 focus:ring-pink-300 transition-all duration-200'
                     />
                     <EyeIcon
                         show={showConfirmPassword}
