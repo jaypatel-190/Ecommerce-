@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, fireDB } from "../../firebase/FirebaseConfig";
 import Loader from "../../Components/loader/Loader";
+import EyeIcon from "../../Components/EyeIcon";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 
 const Login = () => {
@@ -111,10 +112,10 @@ const Login = () => {
                 </div>
 
                 {/* Input Two  */}
-                <div className="mb-5">
+                <div className="mb-5 relative">
                     <label htmlFor="password" className="sr-only">Password</label>
                     <input
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                         id="password"
                         placeholder='Password'
                         value={userLogin.password}
@@ -124,7 +125,11 @@ const Login = () => {
                                 password: e.target.value
                             })
                         }}
-                        className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200'
+                        className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200 pr-10'
+                    />
+                    <EyeIcon
+                        show={showPassword}
+                        onClick={() => setShowPassword(!showPassword)}
                     />
                 </div>
 
