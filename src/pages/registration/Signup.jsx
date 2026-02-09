@@ -25,6 +25,10 @@ const Signup = () => {
         role: "user"
     });
 
+    // Password visibility states
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
     /*  User Signup Function   */
     const userSignupFunction = async () => {
         // validation
@@ -96,7 +100,7 @@ const Signup = () => {
         <div className='flex justify-center items-center h-screen'>
             {loading && <Loader />}
             {/* Signup Form */}
-            <form onSubmit={(e) => {e.preventDefault(); userSignupFunction();}} className="login_Form bg-pink-50 px-8 py-6 border border-pink-100 rounded-xl shadow-md">
+            <form onSubmit={(e) => { e.preventDefault(); userSignupFunction(); }} className="login_Form bg-pink-50 px-8 py-6 border border-pink-100 rounded-xl shadow-md">
                 {/* Top Heading */}
                 <div className="mb-5">
                     <h2 className='text-center text-2xl font-bold text-pink-500 '>

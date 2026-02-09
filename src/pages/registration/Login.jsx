@@ -20,6 +20,9 @@ const Login = () => {
         password: ""
     });
 
+    // Password visibility state
+    const [showPassword, setShowPassword] = useState(false);
+
     /*  User Login Function */
 
     const userLoginFunction = async () => {
@@ -29,7 +32,7 @@ const Login = () => {
             setLoading(false);
             return;
         }
-        
+
         // email format validation
         const emailRegex = /^[\w\.-]+@[\w\.-]+\.\w+$/;
         if (!emailRegex.test(userLogin.email)) {
@@ -50,16 +53,16 @@ const Login = () => {
                 const data = onSnapshot(q, (QuerySnapshot) => {
                     let user;
                     QuerySnapshot.forEach((doc) => user = doc.data());
-                    localStorage.setItem("users", JSON.stringify(user) )
+                    localStorage.setItem("users", JSON.stringify(user))
                     setUserLogin({
                         email: "",
                         password: ""
                     })
                     toast.success("Login Successfully");
                     setLoading(false);
-                    if(user.role === "user") {
+                    if (user.role === "user") {
                         navigate('/user-dashboard');
-                    }else{
+                    } else {
                         navigate('/admin-dashboard');
                     }
                 });
@@ -79,7 +82,7 @@ const Login = () => {
         <div className='flex justify-center items-center h-screen'>
             {loading && <Loader />}
             {/* Login Form  */}
-            <form onSubmit={(e) => {e.preventDefault(); userLoginFunction();}} className="login_Form bg-pink-50  px-8 py-6 border border-pink-100 rounded-xl shadow-md">
+            <form onSubmit={(e) => { e.preventDefault(); userLoginFunction(); }} className="login_Form bg-pink-50  px-8 py-6 border border-pink-100 rounded-xl shadow-md">
 
                 {/* Top Heading  */}
                 <div className="mb-5">
