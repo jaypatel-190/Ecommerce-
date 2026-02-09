@@ -6,6 +6,7 @@ import { auth, fireDB } from "../../firebase/FirebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import toast from "react-hot-toast";
 import Loader from "../../Components/loader/Loader";
+import EyeIcon from "../../Components/EyeIcon";
 
 const Signup = () => {
     const context = useContext(myContext);
@@ -163,10 +164,10 @@ const Signup = () => {
                 </div>
 
                 {/* Input Password */}
-                <div className="mb-3">
+                <div className="mb-3 relative">
                     <label htmlFor="password" className="sr-only">Password</label>
                     <input
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                         id="password"
                         placeholder='Password'
                         value={userSignup.password}
@@ -176,15 +177,19 @@ const Signup = () => {
                                 password: e.target.value
                             })
                         }}
-                        className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200'
+                        className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200 pr-10'
+                    />
+                    <EyeIcon
+                        show={showPassword}
+                        onClick={() => setShowPassword(!showPassword)}
                     />
                 </div>
 
                 {/* Input Confirm Password */}
-                <div className="mb-3">
+                <div className="mb-3 relative">
                     <label htmlFor="confirmPassword" className="sr-only">Confirm Password</label>
                     <input
-                        type="password"
+                        type={showConfirmPassword ? "text" : "password"}
                         id="confirmPassword"
                         placeholder='Confirm Password'
                         value={userSignup.confirmPassword}
@@ -194,7 +199,11 @@ const Signup = () => {
                                 confirmPassword: e.target.value
                             })
                         }}
-                        className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200'
+                        className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200 pr-10'
+                    />
+                    <EyeIcon
+                        show={showConfirmPassword}
+                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                     />
                 </div>
 
