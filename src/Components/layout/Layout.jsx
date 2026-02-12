@@ -5,12 +5,16 @@ import Footer from "../footer/Footer";
 const Layout = ({ children }) => {
     return (
         <>
-            <div>
-                <Navbar />
-                <div className="main-content min-h-screen">
+            <div className="app-layout">
+                <header role="banner">
+                    <Navbar />
+                </header>
+                <main className="main-content min-h-screen" role="main">
                     {children}
-                </div>
-                <Footer />
+                </main>
+                <footer role="contentinfo">
+                    <Footer />
+                </footer>
             </div>
         </>
     );
