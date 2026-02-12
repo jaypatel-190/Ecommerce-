@@ -74,9 +74,16 @@ const Sidebar = ({ toggleSidebar }) => {
           <div className="left flex items-center py-3 lg:py-0">
             {/* Close Icon */}
             <CloseIcon
-              className="mr-2 cursor-pointer text-white"
+              className="mr-2 cursor-pointer text-white  "
               onClick={toggleSidebar}
               title="Close menu"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  toggleSidebar();
+                }
+              }}
             />
             <h2 className="font-bold text-white text-2xl text-center">Menu</h2>
           </div>
