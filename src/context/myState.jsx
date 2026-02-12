@@ -34,7 +34,12 @@ function MyState({ children }) {
       const data = onSnapshot(q, (QuerySnapshot) => {
         let productArray = [];
         QuerySnapshot.forEach((doc) => {
-          productArray.push({ ...doc.data(), id: doc.id });
+          const docData = doc.data();
+          productArray.push({
+            ...docData,
+            id: doc.id,
+            time: docData.time ? docData.time.toDate().toISOString() : null
+          });
         });
         setGetAllProduct(productArray);
         setLoading(false);
@@ -61,7 +66,12 @@ function MyState({ children }) {
       const data = onSnapshot(q, (QuerySnapshot) => {
         let orderArray = [];
         QuerySnapshot.forEach((doc) => {
-          orderArray.push({ ...doc.data(), id: doc.id });
+          const docData = doc.data();
+          orderArray.push({
+            ...docData,
+            id: doc.id,
+            time: docData.time ? docData.time.toDate().toISOString() : null
+          });
         });
         setGetAllOrder(orderArray);
         setLoading(false);
@@ -132,7 +142,12 @@ function MyState({ children }) {
       const data = onSnapshot(q, (QuerySnapshot) => {
         let userArray = [];
         QuerySnapshot.forEach((doc) => {
-          userArray.push({ ...doc.data(), id: doc.id });
+          const docData = doc.data();
+          userArray.push({
+            ...docData,
+            id: doc.id,
+            time: docData.time ? docData.time.toDate().toISOString() : null
+          });
         });
         setGetAllUser(userArray);
         setLoading(false);
