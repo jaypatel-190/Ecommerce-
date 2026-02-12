@@ -74,6 +74,7 @@ const AllProduct = () => {
                             <button
                               onClick={() => deleteCart(item)}
                               className=" bg-red-700 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
+                              aria-label={`Delete ${title} from cart`}
                             >
                               Delete From Cart
                             </button>
@@ -81,6 +82,7 @@ const AllProduct = () => {
                             <button
                               onClick={() => addCart(item)}
                               className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
+                              aria-label={`Add ${title} to cart`}
                             >
                               Add To Cart
                             </button>
