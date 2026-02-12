@@ -9,7 +9,12 @@ const HeroSection = () => {
   return (
     <div className="relative w-full overflow-hidden">
       {!imageLoaded && !imageError && (
-        <div className="absolute inset-0 bg-gradient-to-r from-pink-100 to-purple-100 animate-pulse" aria-hidden="true" />
+        <>
+          <div className="absolute inset-0 bg-gradient-to-r from-pink-100 to-purple-100 animate-pulse" aria-hidden="true" />
+          <div className="sr-only" role="status" aria-live="polite">
+            Loading ShopWave banner image...
+          </div>
+        </>
       )}
       <img
         className={`w-full h-auto object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
