@@ -138,6 +138,7 @@ const UpdateProductPage = () => {
                 });
               }}
               placeholder="Product Title"
+              aria-label="Product Title"
               className="bg-pink-50 border text-pink-300 border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-300"
             />
           </div>
@@ -155,6 +156,7 @@ const UpdateProductPage = () => {
                 });
               }}
               placeholder="Product Price"
+              aria-label="Product Price"
               className="bg-pink-50 border text-pink-300 border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-300"
             />
           </div>
