@@ -174,6 +174,7 @@ const UpdateProductPage = () => {
                 });
               }}
               placeholder="Product Image Url"
+              aria-label="Product Image URL"
               className="bg-pink-50 border text-pink-300 border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-300"
             />
           </div>
@@ -188,6 +189,7 @@ const UpdateProductPage = () => {
                   category: e.target.value,
                 });
               }}
+              aria-label="Product Category"
               className="w-full px-1 py-2 text-pink-300 bg-pink-50 border border-pink-200 rounded-md outline-none  "
             >
               <option value="" disabled>Select Product Category</option>
@@ -218,6 +220,7 @@ const UpdateProductPage = () => {
               }}
               name="description"
               placeholder="Product Description"
+              aria-label="Product Description"
               rows="5"
               className=" w-full px-2 py-1 text-pink-300 bg-pink-50 border border-pink-200 rounded-md outline-none placeholder-pink-300 "
             ></textarea>
@@ -228,6 +231,7 @@ const UpdateProductPage = () => {
             <button
               onClick={updateProduct}
               type="button"
+              aria-label="Update Product"
               className="bg-pink-500 hover:bg-pink-600 w-full text-white text-center py-2 font-bold rounded-md "
             >
               Update Product
