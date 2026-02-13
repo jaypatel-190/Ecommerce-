@@ -75,6 +75,13 @@ const AllProduct = () => {
                               onClick={() => deleteCart(item)}
                               className=" bg-red-700 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
                               aria-label={`Delete ${title} from cart`}
+                              tabIndex={0}
+                              onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                  e.preventDefault();
+                                  deleteCart(item);
+                                }
+                              }}
                             >
                               Delete From Cart
                             </button>
@@ -83,6 +90,13 @@ const AllProduct = () => {
                               onClick={() => addCart(item)}
                               className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
                               aria-label={`Add ${title} to cart`}
+                              tabIndex={0}
+                              onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                  e.preventDefault();
+                                  addCart(item);
+                                }
+                              }}
                             >
                               Add To Cart
                             </button>
