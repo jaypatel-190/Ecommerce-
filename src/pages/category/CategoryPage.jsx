@@ -91,6 +91,7 @@ const CategoryPage = () => {
                                   <button
                                     onClick={() => deleteCart(item)}
                                     className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
+                                    aria-label={`Delete ${item.title} from cart`}
                                   >
                                     Delete From Cart
                                   </button>
