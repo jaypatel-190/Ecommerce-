@@ -99,6 +99,7 @@ const CategoryPage = () => {
                                   <button
                                     onClick={() => addCart(item)}
                                     className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
+                                    aria-label={`Add ${item.title} to cart`}
                                   >
                                     Add To Cart
                                   </button>
