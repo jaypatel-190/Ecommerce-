@@ -83,7 +83,7 @@ const UserDashboard = () => {
                                 <div className="text-sm font-semibold" id="order-status-label">
                                   Order Status
                                 </div>
-                                <div className="text-sm font-medium text-green-800 first-letter:uppercase" role="status">
+                                <div className="text-sm font-medium text-green-800 first-letter:uppercase" role="status" aria-live="polite">
                                   {status}
                                 </div>
                               </div>
