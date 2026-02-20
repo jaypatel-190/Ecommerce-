@@ -327,6 +327,7 @@ const CartPage = () => {
                                 });
                               }}
                               placeholder="Enter your name"
+                              aria-label="Full Name"
                               className="bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none text-pink-600 placeholder-pink-300"
                             />
                           </div>
