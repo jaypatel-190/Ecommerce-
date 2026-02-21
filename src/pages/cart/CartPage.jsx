@@ -377,6 +377,7 @@ const CartPage = () => {
                               }}
                               placeholder="Enter your mobile number"
                               maxLength={10}
+                              aria-label="Mobile Number"
                               className="bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 placeholder-pink-300"
                             />
                           </div>
