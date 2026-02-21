@@ -78,6 +78,7 @@ const Sidebar = ({ toggleSidebar }) => {
               onClick={toggleSidebar}
               title="Close menu"
               aria-label="Close navigation menu"
+              role="button"
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
