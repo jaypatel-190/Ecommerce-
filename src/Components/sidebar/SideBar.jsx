@@ -77,6 +77,7 @@ const Sidebar = ({ toggleSidebar }) => {
               className="mr-2 cursor-pointer text-white  "
               onClick={toggleSidebar}
               title="Close menu"
+              aria-label="Close navigation menu"
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
