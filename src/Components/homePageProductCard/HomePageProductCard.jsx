@@ -99,6 +99,7 @@ const HomePageProductCard = () => {
                             src={productImageUrl}
                             alt={`${title.substring(0, 25)} product`}
                             title={`${title} - ₹${price}`}
+                            role="button"
                             loading="lazy"
                             onLoad={() => handleImageLoad(id)}
                             onError={(e) => {
