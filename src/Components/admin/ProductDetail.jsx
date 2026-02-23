@@ -89,7 +89,7 @@ const ProductDetail = () => {
                                     <td onClick={() => navigate(`/updateproduct/${id}`)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-green-500 cursor-pointer " role="button" tabIndex={0} aria-label={`Edit ${title}`} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(`/updateproduct/${id}`); } }}>
                                         Edit
                                     </td>
-                                    <td onClick={() => deleteProduct(id, title)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer " role="button" tabIndex={0}>
+                                    <td onClick={() => deleteProduct(id, title)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer " role="button" tabIndex={0} aria-label={`Delete ${title}`}>
                                         Delete
                                     </td>
                                 </tr>
