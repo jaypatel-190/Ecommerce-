@@ -48,6 +48,9 @@ const UserDetail = () => {
                 {/* table  */}
                 <div className="w-full overflow-x-auto">
                     <table className="w-full text-left border border-collapse sm:border-separate border-pink-100 text-pink-400" >
+                        <caption className="sr-only">
+                            List of all registered users with their details including name, email, UID, role, and registration date
+                        </caption>
                         <thead>
                             <tr>
                                 <th scope="col"
