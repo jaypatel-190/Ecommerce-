@@ -66,7 +66,7 @@ const AdminDashboard = () => {
                 {/* Bottom */}
                 <div className="">
                     <Tabs>
-                        <TabList className="flex flex-wrap -m-4 text-center justify-center" role="tablist">
+                        <TabList className="flex flex-wrap -m-4 text-center justify-center" role="tablist" aria-label="Admin dashboard navigation tabs">
                             {/* Total Products */}
                             <Tab className="p-4 md:w-1/3 sm:w-1/2 w-full cursor-pointer">
                                 <div className=" border bg-pink-50 hover:bg-pink-100 border-pink-100 px-4 py-3 rounded-xl" >
