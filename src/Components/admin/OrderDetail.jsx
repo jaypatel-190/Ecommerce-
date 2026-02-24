@@ -15,6 +15,9 @@ const OrderDetail = () => {
         {/* table  */}
         <div className="w-full overflow-x-auto">
           <table className="w-full text-left border border-collapse sm:border-separate border-pink-100 text-pink-400">
+            <caption className="sr-only">
+              List of all orders with details including order ID, product information, customer details, and order status
+            </caption>
             <tbody>
               <tr>
                 <th
