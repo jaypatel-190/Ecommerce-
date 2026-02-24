@@ -8,12 +8,12 @@ import myContext from '../../context/myContext';
 const AdminDashboard = () => {
     const user = JSON.parse(localStorage.getItem('users'));
     const context = useContext(myContext);
-    const {getAllProduct, getAllOrder , getAllUser} = context;
+    const { getAllProduct, getAllOrder, getAllUser } = context;
 
-//     // Calculate total number of items in orders
-// const totalItemsInOrders = getAllOrder.reduce((total, order) => {
-//     return total + order.cartItems.reduce((acc, item) => acc + item.quantity, 0);
-// }, 0);
+    //     // Calculate total number of items in orders
+    // const totalItemsInOrders = getAllOrder.reduce((total, order) => {
+    //     return total + order.cartItems.reduce((acc, item) => acc + item.quantity, 0);
+    // }, 0);
 
 
     return (
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
                             <img src="https://cdn-icons-png.flaticon.com/128/2202/2202112.png" alt="Admin dashboard icon" />
                         </div> */}
                         {/* text  */}
-                           <div className="">
+                        <div className="">
                             {/* Name  */}
                             <h1 className=" text-center text-lg">
                                 <span className=" font-bold">Name : </span>
@@ -66,7 +66,7 @@ const AdminDashboard = () => {
                 {/* Bottom */}
                 <div className="">
                     <Tabs>
-                        <TabList className="flex flex-wrap -m-4 text-center justify-center">
+                        <TabList className="flex flex-wrap -m-4 text-center justify-center" role="tablist">
                             {/* Total Products */}
                             <Tab className="p-4 md:w-1/3 sm:w-1/2 w-full cursor-pointer">
                                 <div className=" border bg-pink-50 hover:bg-pink-100 border-pink-100 px-4 py-3 rounded-xl" >
@@ -161,11 +161,11 @@ const AdminDashboard = () => {
                         </TabPanel>
 
                         <TabPanel>
-                            <OrderDetail/>
+                            <OrderDetail />
                         </TabPanel>
 
                         <TabPanel>
-                           <UserDetail/>
+                            <UserDetail />
                         </TabPanel>
                     </Tabs>
                 </div>
