@@ -5,7 +5,7 @@ const NoPage = () => {
     const navigate = useNavigate();
 
     return (
-        <main className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+        <main className="min-h-screen flex items-center justify-center bg-gray-50 px-4" role="main">
             <section className="text-center">
                 <div className="mb-8">
                     <h1 className="text-9xl font-bold text-pink-500 mb-4">404</h1>
