@@ -5,6 +5,7 @@ const EyeIcon = ({ show, onClick }) => {
             onClick={onClick}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-pink-400 hover:text-pink-600 focus:outline-none focus:text-pink-600 transition-colors duration-200"
             aria-label={show ? "Hide password" : "Show password"}
+            tabIndex={0}
         >
             {show ? (
                 <svg
