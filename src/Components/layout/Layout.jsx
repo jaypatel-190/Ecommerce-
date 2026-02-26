@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
                 <header role="banner">
                     <Navbar />
                 </header>
-                <main className="main-content min-h-screen" role="main">
+                <main className="main-content min-h-screen" role="main" aria-label="Main content">
                     {children}
                 </main>
                 <footer role="contentinfo">
