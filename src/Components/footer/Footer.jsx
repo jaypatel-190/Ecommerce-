@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-pink-600 text-gray-100 py-5" role="contentinfo">
+    <footer className="bg-pink-600 text-gray-100 py-5" role="contentinfo" aria-label="Site footer">
       <div className="container mx-auto flex flex-col items-center sm:flex-row">
         <div className="flex items-center justify-center mb-4 sm:mb-0">
           <Link to="/"> <span className="text-xl font-bold">ShopWave</span></Link>
