@@ -7,7 +7,7 @@ const SkeletonCard = ({ count = 1 }) => {
         <div className="mt-10">
             {/* Heading Skeleton */}
             <div className="text-center mb-5">
-                <div className="inline-block h-8 w-48 bg-gray-200 rounded-lg animate-pulse"></div>
+                <div className="inline-block h-8 w-48 bg-gray-200 rounded-lg animate-pulse" aria-hidden="true"></div>
             </div>
 
             {/* Main Content */}
