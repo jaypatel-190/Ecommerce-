@@ -108,6 +108,7 @@ const Login = () => {
                             })
                         }}
                         className='bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200'
+                        aria-label="Email Address"
                     />
                 </div>
 
