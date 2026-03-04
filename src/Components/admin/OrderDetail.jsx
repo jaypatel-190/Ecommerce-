@@ -210,6 +210,7 @@ const OrderDetail = () => {
                             onClick={() => orderDelete(order.id, item.id)}
                             className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer "
                             role="button"
+                            tabIndex={0}
                           >
                             Delete
                           </td>
