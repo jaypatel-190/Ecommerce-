@@ -44,6 +44,7 @@ const Navbar = () => {
                 className="mr-2 cursor-pointer text-white"
                 onClick={toggleSidebar}
                 aria-label="Toggle menu"
+                role="button"
               />
               <Link to={"/"} aria-label="ShopWave - Navigate to home page">
                 <h2 className="font-bold text-white text-2xl text-center">
