@@ -45,6 +45,7 @@ const Navbar = () => {
                 onClick={toggleSidebar}
                 aria-label="Toggle menu"
                 role="button"
+                tabIndex={0}
               />
               <Link to={"/"} aria-label="ShopWave - Navigate to home page">
                 <h2 className="font-bold text-white text-2xl text-center">
