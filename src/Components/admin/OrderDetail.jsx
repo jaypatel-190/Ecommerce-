@@ -211,6 +211,7 @@ const OrderDetail = () => {
                             className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer "
                             role="button"
                             tabIndex={0}
+                            aria-label={`Delete order item ${title}`}
                           >
                             Delete
                           </td>
