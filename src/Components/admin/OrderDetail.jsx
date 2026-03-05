@@ -212,6 +212,7 @@ const OrderDetail = () => {
                             role="button"
                             tabIndex={0}
                             aria-label={`Delete order item ${title}`}
+                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); orderDelete(order.id, item.id); } }}
                           >
                             Delete
                           </td>
