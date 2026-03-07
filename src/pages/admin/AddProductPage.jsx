@@ -201,6 +201,7 @@ const AddProductPage = () => {
               onClick={addProductFunction}
               type="button"
               aria-label="Add Product"
+              role="button"
               className="bg-pink-500 hover:bg-pink-600 w-full text-white text-center py-2 font-bold rounded-md "
             >
               Add Product
