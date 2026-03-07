@@ -47,6 +47,12 @@ const Navbar = () => {
                 role="button"
                 tabIndex={0}
                 aria-expanded={isSidebarOpen}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleSidebar();
+                  }
+                }}
               />
               <Link to={"/"} aria-label="ShopWave - Navigate to home page">
                 <h2 className="font-bold text-white text-2xl text-center">
