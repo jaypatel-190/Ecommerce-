@@ -92,6 +92,14 @@ const CategoryPage = () => {
                                     onClick={() => deleteCart(item)}
                                     className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
                                     aria-label={`Delete ${item.title} from cart`}
+                                    role="button"
+                                    tabIndex={0}
+                                    onKeyDown={(e) => {
+                                      if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault();
+                                        deleteCart(item);
+                                      }
+                                    }}
                                   >
                                     Delete From Cart
                                   </button>
@@ -100,6 +108,14 @@ const CategoryPage = () => {
                                     onClick={() => addCart(item)}
                                     className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
                                     aria-label={`Add ${item.title} to cart`}
+                                    role="button"
+                                    tabIndex={0}
+                                    onKeyDown={(e) => {
+                                      if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault();
+                                        addCart(item);
+                                      }
+                                    }}
                                   >
                                     Add To Cart
                                   </button>
