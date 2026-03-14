@@ -127,6 +127,8 @@ const HomePageProductCard = () => {
                                 className=" bg-red-700 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                                 aria-label={`Remove ${title.substring(0, 25)} from cart`}
                                 aria-busy={loadingItemId === item.id}
+                                role="button"
+                                tabIndex={0}
                               >
                                 {loadingItemId === item.id ? (
                                   <>
@@ -144,6 +146,8 @@ const HomePageProductCard = () => {
                                 className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                                 aria-label={`Add ${title.substring(0, 25)} to cart`}
                                 aria-busy={loadingItemId === item.id}
+                                role="button"
+                                tabIndex={0}
                               >
                                 {loadingItemId === item.id ? (
                                   <>
