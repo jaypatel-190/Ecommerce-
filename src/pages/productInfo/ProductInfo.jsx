@@ -177,6 +177,8 @@ const ProductInfo = () => {
                         onClick={() => deleteCart(product)}
                         className="w-full px-4 py-3 text-center text-white bg-red-500 border border-red-600 hover:bg-red-600 hover:text-gray-100 rounded-xl"
                         aria-label={`Delete ${product.title} from cart`}
+                        role="button"
+                        tabIndex={0}
                       >
                         Delete from cart
                       </button>
@@ -185,6 +187,8 @@ const ProductInfo = () => {
                         onClick={() => addCart(product)}
                         className="w-full px-4 py-3 text-center text-pink-600 bg-pink-100 border border-pink-600  hover:bg-pink-600 hover:text-gray-100 rounded-xl"
                         aria-label={`Add ${product.title} to cart`}
+                        role="button"
+                        tabIndex={0}
                       >
                         Add to cart
                       </button>
