@@ -95,6 +95,13 @@ const Testimonial = () => {
                   aria-label={`Go to testimonial ${index + 1}`}
                   aria-selected={index === currentIndex}
                   aria-controls={`testimonial-${index}`}
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setCurrentIndex(index);
+                    }
+                  }}
                 />
               ))}
             </div>
