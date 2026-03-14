@@ -69,7 +69,7 @@ const Track = () => {
                 <div className="flex flex-wrap -m-4 text-center" role="list" aria-label="Our features">
                     {features.map((feature, index) => (
                         <div key={index} className="p-4 md:w-1/3 sm:w-1/2 w-full" role="listitem">
-                            <article className="border-4 hover:shadow-xl hover:shadow-pink-200 border-gray-200 bg-gray-100 px-4 py-6 rounded-lg shadow-md transition-all duration-300 focus-within:ring-2 focus-within:ring-pink-300 focus-within:ring-offset-2">
+                            <article className="border-4 hover:shadow-xl hover:shadow-pink-200 border-gray-200 bg-gray-100 px-4 py-6 rounded-lg shadow-md transition-all duration-300 focus-within:ring-2 focus-within:ring-pink-300 focus-within:ring-offset-2" tabIndex={0}>
                                 <div className="flex flex-col items-center">
                                     <div className="w-12 h-12 mb-3 text-pink-600">
                                         {feature.icon}
