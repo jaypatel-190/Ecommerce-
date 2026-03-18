@@ -183,6 +183,7 @@ const CartPage = () => {
                               type="button"
                               className="h-7 w-7"
                               aria-label="Decrease quantity"
+                              tabIndex={0}
                             >
                               -
                             </button>
