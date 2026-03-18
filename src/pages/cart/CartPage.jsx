@@ -198,6 +198,7 @@ const CartPage = () => {
                               type="button"
                               className="flex h-7 w-7 items-center justify-center"
                               aria-label="Increase quantity"
+                              tabIndex={0}
                             >
                               +
                             </button>
