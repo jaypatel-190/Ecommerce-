@@ -41,7 +41,7 @@ const Footer = () => {
               <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
             </svg>
           </a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="mx-2 text-gray-100 cursor-pointer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="mx-2 text-gray-100 cursor-pointer" aria-label="LinkedIn" tabIndex={0}>
             <svg
               fill="currentColor"
               stroke="currentColor"
