@@ -20,6 +20,7 @@ const NoPage = () => {
                         onClick={() => navigate('/')}
                         className="inline-flex items-center px-6 py-3 bg-pink-500 text-white font-medium rounded-lg hover:bg-pink-600 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
                         role="button"
+                        tabIndex={0}
                     >
                         <svg
                             className="w-5 h-5 mr-2"
