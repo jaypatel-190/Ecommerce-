@@ -46,6 +46,9 @@ const NoPage = () => {
                         <button
                             onClick={() => window.history.back()}
                             className="text-pink-500 hover:text-pink-600 font-medium underline focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 rounded"
+                            role="button"
+                            tabIndex={0}
+                            aria-label="Go back to the previous page"
                         >
                             go back to the previous page
                         </button>
