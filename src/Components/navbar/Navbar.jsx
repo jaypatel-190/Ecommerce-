@@ -54,7 +54,7 @@ const Navbar = () => {
                   }
                 }}
               />
-              <Link to={"/"} aria-label="ShopWave - Navigate to home page">
+              <Link to={"/"} aria-label="ShopWave - Navigate to home page" role="menuitem">
                 <h2 className="font-bold text-white text-2xl text-center">
                   ShopWave
                 </h2>
@@ -74,7 +74,7 @@ const Navbar = () => {
                 className={`hover:text-gray-300 ${location.pathname === "/" ? "border-b-2 border-white" : ""
                   }`}
               >
-                <Link to={"/"} aria-label="Navigate to home page">Home</Link>
+                <Link to={"/"} aria-label="Navigate to home page" role="menuitem">Home</Link>
               </li>
               <li
                 className={`hover:text-gray-300 ${location.pathname === "/allproduct"
@@ -82,7 +82,7 @@ const Navbar = () => {
                   : ""
                   }`}
               >
-                <Link to={"/allproduct"} aria-label="View all products">All Product</Link>
+                <Link to={"/allproduct"} aria-label="View all products" role="menuitem">All Product</Link>
               </li>
               {!user && (
                 <>
@@ -92,7 +92,7 @@ const Navbar = () => {
                       : ""
                       }`}
                   >
-                    <Link to={"/signup"} aria-label="Create a new account">Sign up</Link>
+                    <Link to={"/signup"} aria-label="Create a new account" role="menuitem">Sign up</Link>
                   </li>
                   <li
                     className={`hover:text-gray-300 ${location.pathname === "/login"
@@ -100,7 +100,7 @@ const Navbar = () => {
                       : ""
                       }`}
                   >
-                    <Link to={"/login"} aria-label="Sign in to your account">Login</Link>
+                    <Link to={"/login"} aria-label="Sign in to your account" role="menuitem">Login</Link>
                   </li>
                 </>
               )}
