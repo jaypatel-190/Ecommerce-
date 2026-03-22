@@ -114,7 +114,7 @@ const SearchBar = () => {
                                         onMouseEnter={() => setSelectedIndex(index)}
                                         role="option"
                                         aria-selected={selectedIndex === index}
-                                        tabIndex={-1}
+                                        tabIndex={0}
                                     >
                                         <div className="flex items-center gap-2">
                                             <img className="w-10" src={item.productImageUrl} alt={`Product image for ${item.title}`} role="presentation" />
