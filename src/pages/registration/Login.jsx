@@ -141,6 +141,7 @@ const Login = () => {
                         type='submit'
                         className='bg-pink-500 hover:bg-pink-600 w-full text-white text-center py-2 font-bold rounded-md '
                         aria-label="Sign in to your account"
+                        role="button"
                     >
                         Login
                     </button>
