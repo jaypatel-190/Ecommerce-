@@ -37,7 +37,7 @@ const ProductDetail = () => {
                 <h1 className=" text-xl text-pink-300 font-bold">All Products</h1>
                 {/* Add Product Button  */}
                 <Link to={'/addproduct'} aria-label="Add new product">
-                    <button className="px-5 py-2 bg-pink-50 border border-pink-100 rounded-lg">Add Product</button>
+                    <button className="px-5 py-2 bg-pink-50 border border-pink-100 rounded-lg" role="button">Add Product</button>
                 </Link>
             </div>
 
