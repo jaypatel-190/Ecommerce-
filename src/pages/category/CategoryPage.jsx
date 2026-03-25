@@ -74,6 +74,8 @@ const CategoryPage = () => {
                               className="lg:h-80  h-96 w-full"
                               src={productImageUrl}
                               alt={`${title} product image`}
+                              role="button"
+                              tabIndex={0}
                             />
                             <div className="p-6">
                               <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
