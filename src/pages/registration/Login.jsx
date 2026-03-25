@@ -147,7 +147,7 @@ const Login = () => {
                     </button>
                 </div>
                 <div>
-                    <h2 className='text-black'>Don't Have an account <Link className=' text-pink-500 font-bold' to={'/signup'}>Signup</Link></h2>
+                    <p className='text-black'>Don't Have an account <Link className=' text-pink-500 font-bold' to={'/signup'}>Signup</Link></p>
                 </div>
             </form>
         </div>
