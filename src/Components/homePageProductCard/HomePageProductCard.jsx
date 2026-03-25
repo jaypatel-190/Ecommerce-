@@ -106,6 +106,7 @@ const HomePageProductCard = () => {
                               e.target.src = 'https://via.placeholder.com/300x300?text=Image+Not+Found';
                               handleImageLoad(id);
                             }}
+                            tabIndex={0}
                           />
                         </div>
                         <div className="p-6">
