@@ -23,6 +23,7 @@ const HeroSection = () => {
         loading="lazy"
         onLoad={() => setImageLoaded(true)}
         onError={() => setImageError(true)}
+        role="img"
       />
       {imageError && (
         <div className="w-full h-64 bg-gradient-to-r from-pink-200 to-purple-200 flex items-center justify-center" role="img" aria-label="ShopWave banner placeholder">
