@@ -58,6 +58,8 @@ const AllProduct = () => {
                         src={productImageUrl}
                         alt={`${title} product image`}
                         title={`${title} - ₹${price}`}
+                        role="button"
+                        tabIndex={0}
                       />
                       <div className="p-6">
                         <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
