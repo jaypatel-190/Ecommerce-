@@ -128,7 +128,7 @@ const AdminDashboard = () => {
                             </Tab>
 
                             {/* Total User  */}
-                            <Tab className="p-4 md:w-1/3 sm:w-1/2 w-full cursor-pointer" role="tab">
+                            <Tab className="p-4 md:w-1/3 sm:w-1/2 w-full cursor-pointer" role="tab" aria-label="View all users tab">
                                 <div className=" border bg-pink-50 hover:bg-pink-100 border-pink-100 px-4 py-3 rounded-xl" >
                                     <div className="text-pink-500 w-12 h-12 mb-3 inline-block" >
                                         <svg
