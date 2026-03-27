@@ -19,7 +19,7 @@ const UserDashboard = () => {
         {/* main 1 */}
         <div className="mx-auto my-4 max-w-6xl px-2 md:my-6 md:px-0">
           {/* text  */}
-          <h2 className=" text-2xl lg:text-3xl font-bold">Order Details</h2>
+          <h2 className=" text-2xl lg:text-3xl font-bold" aria-label="User order details">Order Details</h2>
 
           <div className="flex justify-center relative top-10">
             {loading && <Loader />}
