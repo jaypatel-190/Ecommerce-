@@ -50,7 +50,9 @@ const ProductDetail = () => {
             <div className="w-full overflow-x-auto mb-5">
 
                 <table className="w-full text-left border border-collapse sm:border-separate border-pink-100 text-pink-400" >
-
+                    <caption className="sr-only">
+                        List of all products with details including image, title, price, category, date, and action buttons for editing and deleting
+                    </caption>
                     <tbody>
                         <tr>
                             <th scope="col" className="h-12 px-6 text-md border-l first:border-l-0 border-pink-100 text-slate-700 bg-slate-100 font-bold fontPara">S.No.</th>
