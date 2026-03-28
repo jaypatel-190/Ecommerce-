@@ -150,6 +150,7 @@ const ProductInfo = () => {
                     className="w-full lg:h-[39em] rounded-lg"
                     src={product?.productImageUrl}
                     alt={`Product image of ${product?.title}`}
+                    title={`${product?.title} - ₹${product?.price}`}
                   />
                 </div>
               </div>
