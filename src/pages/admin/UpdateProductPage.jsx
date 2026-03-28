@@ -120,7 +120,7 @@ const UpdateProductPage = () => {
         <div className="login_Form bg-pink-50 px-8 py-6 border border-pink-100 rounded-xl shadow-md">
           {/* Top Heading  */}
           <div className="mb-5">
-            <h2 className="text-center text-2xl font-bold text-pink-500 ">
+            <h2 className="text-center text-2xl font-bold text-pink-500 " aria-label="Update product form heading">
               Update Product
             </h2>
           </div>
