@@ -107,6 +107,12 @@ const HomePageProductCard = () => {
                               handleImageLoad(id);
                             }}
                             tabIndex={0}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                navigate(`/productinfo/${id}`);
+                              }
+                            }}
                           />
                         </div>
                         <div className="p-6">
