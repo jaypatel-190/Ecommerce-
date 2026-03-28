@@ -70,7 +70,7 @@ const HomePageProductCard = () => {
         <>
           {/* Heading  */}
           <div className="">
-            <h1 className=" text-center mb-5 text-2xl font-semibold">
+            <h1 className=" text-center mb-5 text-2xl font-semibold" aria-label="Bestselling products section">
               Bestselling Products
             </h1>
           </div>
