@@ -39,7 +39,9 @@ const UserDetail = () => {
         <div>
             <div>
                 <div className="py-5 flex justify-between items-center">
-                    <h1 className="text-xl text-pink-300 font-bold">All Users</h1>
+                    <h1 className="text-xl text-pink-300 font-bold" aria-label="All users section heading">
+                        All Users
+                    </h1>
                     <div className="text-sm text-gray-500">
                         Total: {getAllUser.length} {getAllUser.length === 1 ? 'User' : 'Users'}
                     </div>
