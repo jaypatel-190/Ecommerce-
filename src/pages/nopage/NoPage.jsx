@@ -22,6 +22,12 @@ const NoPage = () => {
                         role="button"
                         tabIndex={0}
                         aria-label="Go back to home page"
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                navigate('/');
+                            }
+                        }}
                     >
                         <svg
                             className="w-5 h-5 mr-2"
@@ -49,6 +55,12 @@ const NoPage = () => {
                             role="button"
                             tabIndex={0}
                             aria-label="Go back to the previous page"
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    window.history.back();
+                                }
+                            }}
                         >
                             go back to the previous page
                         </button>
