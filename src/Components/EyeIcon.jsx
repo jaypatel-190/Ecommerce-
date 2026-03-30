@@ -7,6 +7,12 @@ const EyeIcon = ({ show, onClick }) => {
             aria-label={show ? "Hide password" : "Show password"}
             tabIndex={0}
             role="button"
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    onClick();
+                }
+            }}
         >
             {show ? (
                 <svg
