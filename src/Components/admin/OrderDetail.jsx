@@ -9,7 +9,9 @@ const OrderDetail = () => {
       <div>
         <div className="py-5">
           {/* text  */}
-          <h1 className=" text-xl text-pink-300 font-bold">All Order</h1>
+          <h1 className=" text-xl text-pink-300 font-bold" aria-label="All orders section heading">
+            All Order
+          </h1>
         </div>
 
         {/* table  */}
