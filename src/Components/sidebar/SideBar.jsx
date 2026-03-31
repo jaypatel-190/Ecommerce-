@@ -91,7 +91,7 @@ const Sidebar = ({ toggleSidebar }) => {
           </div>
 
           {/* Categories */}
-          <h2 className="font-bold text-white text-2xl text-center">
+          <h2 className="font-bold text-white text-2xl text-center" aria-label="Product categories">
             Categories
           </h2>
 
@@ -119,7 +119,9 @@ const Sidebar = ({ toggleSidebar }) => {
           {/* Account */}
 
           <div className="flex flex-col space-y-2">
-            <h2 className="font-bold text-white text-2xl text-center">Account</h2>
+            <h2 className="font-bold text-white text-2xl text-center" aria-label="User account options">
+              Account
+            </h2>
             {!user ? (
               <>
                 <Link
