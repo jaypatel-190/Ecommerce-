@@ -10,13 +10,13 @@ const Homepage = () => {
 
   return (
     <Layout>
-      <HeroSection />
-      <Category />
-      <HomePageProductCard />
-      <Track />
-      <Testimonial />
-      
-     
+      <main role="main" aria-label="Homepage main content">
+        <HeroSection />
+        <Category />
+        <HomePageProductCard />
+        <Track />
+        <Testimonial />
+      </main>
     </Layout>
   );
 };
