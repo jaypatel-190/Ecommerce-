@@ -31,7 +31,7 @@ const App = () => {
   return (
     <MyState>
       <Router>
-        <ScrollTop />
+        <ScrollTop aria-label="Scroll to top of page" />
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
