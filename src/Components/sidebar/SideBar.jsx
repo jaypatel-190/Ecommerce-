@@ -87,7 +87,9 @@ const Sidebar = ({ toggleSidebar }) => {
                 }
               }}
             />
-            <h2 className="font-bold text-white text-2xl text-center">Menu</h2>
+            <h2 className="font-bold text-white text-2xl text-center" aria-label="Navigation menu">
+              Menu
+            </h2>
           </div>
 
           {/* Categories */}
