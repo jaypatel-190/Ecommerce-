@@ -65,7 +65,7 @@ const Track = () => {
     return (
         <section className="py-10 md:py-14" aria-labelledby="features-heading">
             <div className="container mx-auto px-5">
-                <h2 id="features-heading" className="text-3xl font-bold text-center mb-8 text-gray-900">Why Choose Us</h2>
+                <h2 id="features-heading" className="text-3xl font-bold text-center mb-8 text-gray-900" aria-label="Key features and benefits">Why Choose Us</h2>
                 <div className="flex flex-wrap -m-4 text-center" role="list" aria-label="Our features">
                     {features.map((feature, index) => (
                         <div key={index} className="p-4 md:w-1/3 sm:w-1/2 w-full" role="listitem">
