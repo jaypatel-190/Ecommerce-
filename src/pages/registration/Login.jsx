@@ -87,7 +87,7 @@ const Login = () => {
 
                 {/* Top Heading  */}
                 <div className="mb-5">
-                    <h2 className='text-center text-2xl font-bold text-pink-500 '>
+                    <h2 className='text-center text-2xl font-bold text-pink-500 ' aria-label="Sign in to your account">
                         Login
                     </h2>
                 </div>
