@@ -66,7 +66,7 @@ const Testimonial = () => {
           {/* Heading  */}
           <h1 className=' text-center text-3xl font-bold text-black' aria-label="Customer testimonials">Testimonial</h1>
           {/* para  */}
-          <h2 className=' text-center text-2xl font-semibold mb-10' >What our <span className=' text-pink-500'>customers</span> are saying</h2>
+          <h2 className=' text-center text-2xl font-semibold mb-10' aria-label="Customer feedback and experiences">What our <span className=' text-pink-500'>customers</span> are saying</h2>
 
           {/* Mobile: Show one testimonial at a time with auto-rotation */}
           <div className="lg:hidden flex flex-col items-center">
