@@ -64,7 +64,7 @@ const Testimonial = () => {
         {/* main  */}
         <div className="container px-5 py-10 mx-auto">
           {/* Heading  */}
-          <h1 className=' text-center text-3xl font-bold text-black' >Testimonial</h1>
+          <h1 className=' text-center text-3xl font-bold text-black' aria-label="Customer testimonials">Testimonial</h1>
           {/* para  */}
           <h2 className=' text-center text-2xl font-semibold mb-10' >What our <span className=' text-pink-500'>customers</span> are saying</h2>
 
