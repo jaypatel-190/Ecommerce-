@@ -61,7 +61,7 @@ const Category = () => {
                     <img src={item.image} alt={`${item.name} category`} loading="lazy" />
                   </div>
 
-                  <h1 className=" text-sm lg:text-lg text-center font-medium title-font ">
+                  <h1 className=" text-sm lg:text-lg text-center font-medium title-font " aria-label={`${item.name} product category`}>
                     {item.name}
                   </h1>
                 </div>
