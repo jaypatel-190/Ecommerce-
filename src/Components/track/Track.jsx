@@ -74,7 +74,7 @@ const Track = () => {
                                     <div className="w-12 h-12 mb-3 text-pink-600">
                                         {feature.icon}
                                     </div>
-                                    <h3 className="text-lg font-medium text-gray-900">{feature.title}</h3>
+                                    <h3 className="text-lg font-medium text-gray-900" aria-label={`${feature.title} feature`}>{feature.title}</h3>
                                     <p className="leading-relaxed text-gray-600 mt-2">{feature.description}</p>
                                 </div>
                             </article>
