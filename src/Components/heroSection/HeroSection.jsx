@@ -7,7 +7,7 @@ const HeroSection = () => {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden" role="banner" aria-label="ShopWave hero banner">
       {!imageLoaded && !imageError && (
         <>
           <div className="absolute inset-0 bg-gradient-to-r from-pink-100 to-purple-100 animate-pulse" aria-hidden="true" />
