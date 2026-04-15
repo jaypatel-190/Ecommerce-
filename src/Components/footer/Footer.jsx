@@ -49,6 +49,8 @@ const Footer = () => {
               stroke="currentColor"
               className="w-5 h-5"
               viewBox="0 0 24 24"
+              role="img"
+              aria-hidden="true"
             >
               <path
                 stroke="none"
