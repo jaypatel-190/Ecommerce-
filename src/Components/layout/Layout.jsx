@@ -5,7 +5,7 @@ import Footer from "../footer/Footer";
 const Layout = ({ children }) => {
     return (
         <>
-            <div className="app-layout">
+            <div className="app-layout" role="application" aria-label="ShopWave application">
                 <header role="banner" aria-label="Site header">
                     <Navbar />
                 </header>
