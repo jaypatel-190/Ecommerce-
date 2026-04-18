@@ -55,7 +55,7 @@ const Navbar = () => {
                 }}
               />
               <Link to={"/"} aria-label="ShopWave - Navigate to home page" role="menuitem">
-                <h2 className="font-bold text-white text-2xl text-center">
+                <h2 className="font-bold text-white text-2xl text-center" aria-label="ShopWave brand logo">
                   ShopWave
                 </h2>
               </Link>
