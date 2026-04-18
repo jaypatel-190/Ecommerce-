@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
                 <main className="main-content min-h-screen" role="main" aria-label="Main content">
                     {children}
                 </main>
-                <footer role="contentinfo">
+                <footer role="contentinfo" aria-label="Site footer">
                     <Footer />
                 </footer>
             </div>
