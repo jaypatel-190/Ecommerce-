@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     return (
         <>
             <div className="app-layout">
-                <header role="banner">
+                <header role="banner" aria-label="Site header">
                     <Navbar />
                 </header>
                 <main className="main-content min-h-screen" role="main" aria-label="Main content">
