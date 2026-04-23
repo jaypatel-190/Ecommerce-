@@ -93,6 +93,7 @@ const Navbar = () => {
                       ? "border-b-2 border-white"
                       : ""
                       }`}
+                    aria-label="Signup navigation item"
                   >
                     <Link to={"/signup"} aria-label="Create a new account" role="menuitem">Sign up</Link>
                   </li>
