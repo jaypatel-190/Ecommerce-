@@ -73,6 +73,7 @@ const Navbar = () => {
               <li
                 className={`hover:text-gray-300 ${location.pathname === "/" ? "border-b-2 border-white" : ""
                   }`}
+                aria-label="Home navigation item"
               >
                 <Link to={"/"} aria-label="Navigate to home page" role="menuitem">Home</Link>
               </li>
