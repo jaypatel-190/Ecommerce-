@@ -82,6 +82,7 @@ const Navbar = () => {
                   ? "border-b-2 border-white"
                   : ""
                   }`}
+                aria-label="All products navigation item"
               >
                 <Link to={"/allproduct"} aria-label="View all products" role="menuitem">All Product</Link>
               </li>
