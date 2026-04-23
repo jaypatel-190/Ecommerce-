@@ -112,7 +112,7 @@ const Navbar = () => {
           </div>
 
           {/* Right Section - Functional Items */}
-          <div className="hidden lg:flex justify-center items-center space-x-4">
+          <div className="hidden lg:flex justify-center items-center space-x-4" aria-label="User account and cart actions">
             <SearchBar />
 
             {/* Profile Component */}
