@@ -62,7 +62,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Cart */}
-            <div className="lg:hidden">
+            <div className="lg:hidden" aria-label="Mobile shopping cart">
               <CIcon totalCartQuantity={totalCartQuantity} ariaLabel="View shopping cart" />
             </div>
           </div>
