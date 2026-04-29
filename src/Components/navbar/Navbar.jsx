@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="lg:flex lg:justify-between items-center py-3 lg:px-3 px-4" aria-label="ShopWave navigation bar">
           {/* Left Section - Logo and Sidebar Toggle */}
           <div className="flex items-center justify-between w-full lg:w-auto" aria-label="ShopWave brand and navigation menu">
-            <div className="flex items-center">
+            <div className="flex items-center" aria-label="Menu toggle and brand logo">
               <MenuIcon
                 className="mr-2 cursor-pointer text-white"
                 onClick={toggleSidebar}
