@@ -68,7 +68,7 @@ const Navbar = () => {
           </div>
 
           {/* Center Section - Navigation Links */}
-          <div className="hidden lg:flex justify-center mb-4 lg:mb-0">
+          <div className="hidden lg:flex justify-center mb-4 lg:mb-0" aria-label="Main navigation links">
             <ul className="flex space-x-6 text-white font-medium text-md px-5" role="navigation" aria-label="Main navigation menu">
               <li
                 className={`hover:text-gray-300 ${location.pathname === "/" ? "border-b-2 border-white" : ""
