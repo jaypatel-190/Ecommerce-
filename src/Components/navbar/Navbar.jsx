@@ -36,7 +36,7 @@ const Navbar = () => {
     <>
       {isSidebarOpen && <Sidebar toggleSidebar={toggleSidebar} />}
       <nav className="bg-pink-600 sticky top-0 z-10" role="navigation" aria-label="Main navigation">
-        <div className="lg:flex lg:justify-between items-center py-3 lg:px-3 px-4">
+        <div className="lg:flex lg:justify-between items-center py-3 lg:px-3 px-4" aria-label="ShopWave navigation bar">
           {/* Left Section - Logo and Sidebar Toggle */}
           <div className="flex items-center justify-between w-full lg:w-auto" aria-label="ShopWave brand and navigation menu">
             <div className="flex items-center">
