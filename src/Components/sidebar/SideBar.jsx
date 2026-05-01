@@ -80,7 +80,7 @@ const Sidebar = ({ toggleSidebar }) => {
       >
         <div className="flex flex-col mt-5 p-5 space-y-4">
           {/* Sidebar header */}
-          <div className="left flex items-center py-3 lg:py-0">
+          <div className="left flex items-center py-3 lg:py-0" aria-label="Sidebar header with close button and menu title">
             {/* Close Icon */}
             <CloseIcon
               className="mr-2 cursor-pointer text-white  "
