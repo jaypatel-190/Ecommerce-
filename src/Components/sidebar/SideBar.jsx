@@ -102,31 +102,33 @@ const Sidebar = ({ toggleSidebar }) => {
           </div>
 
           {/* Categories */}
-          <h2 className="font-bold text-white text-2xl text-center" aria-label="Product categories">
-            Categories
-          </h2>
+          <div aria-label="Product categories navigation">
+            <h2 className="font-bold text-white text-2xl text-center" aria-label="Product categories">
+              Categories
+            </h2>
 
-          {category.map((item, index) => (
-            <Link
-              key={index}
-              to={`/category/${item.name}`}
-              className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600"
-              aria-label={`Browse ${item.name} category`}
-              role="menuitem"
-            >
-              {failedImages.has(item.name) ? (
-                <FallbackIcon name={item.name} />
-              ) : (
-                <img
-                  src={item.image}
-                  alt={`Category ${item.name}`}
-                  className="w-10 h-10"
-                  onError={() => handleImageError(item.name)}
-                />
-              )}
-              <span className="text-white font-medium text-lg">{item.name}</span>
-            </Link>
-          ))}
+            {category.map((item, index) => (
+              <Link
+                key={index}
+                to={`/category/${item.name}`}
+                className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600"
+                aria-label={`Browse ${item.name} category`}
+                role="menuitem"
+              >
+                {failedImages.has(item.name) ? (
+                  <FallbackIcon name={item.name} />
+                ) : (
+                  <img
+                    src={item.image}
+                    alt={`Category ${item.name}`}
+                    className="w-10 h-10"
+                    onError={() => handleImageError(item.name)}
+                  />
+                )}
+                <span className="text-white font-medium text-lg">{item.name}</span>
+              </Link>
+            ))}
+          </div>
           {/* Account */}
 
           <div className="flex flex-col space-y-2">
