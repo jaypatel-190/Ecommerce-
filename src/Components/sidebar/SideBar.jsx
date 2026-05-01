@@ -131,7 +131,7 @@ const Sidebar = ({ toggleSidebar }) => {
           </div>
           {/* Account */}
 
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-2" aria-label="User account navigation">
             <h2 className="font-bold text-white text-2xl text-center" aria-label="User account options">
               Account
             </h2>
