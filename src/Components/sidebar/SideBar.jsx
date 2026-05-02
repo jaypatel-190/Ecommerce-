@@ -38,7 +38,7 @@ const category = [
 ];
 
 const FallbackIcon = ({ name }) => (
-  <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+  <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm" role="img" aria-label={`${name} category icon`}>
     {name.charAt(0).toUpperCase()}
   </div>
 );
