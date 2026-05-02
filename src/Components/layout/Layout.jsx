@@ -4,7 +4,7 @@ import Footer from "../footer/Footer";
 
 const Layout = ({ children }) => {
     return (
-        <>
+        <React.Fragment role="presentation">
             <div className="app-layout" role="application" aria-label="ShopWave application">
                 <header role="banner" aria-label="Site header">
                     <Navbar />
@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
                     <Footer />
                 </footer>
             </div>
-        </>
+        </React.Fragment>
     );
 }
 
