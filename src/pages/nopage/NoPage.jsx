@@ -6,7 +6,7 @@ const NoPage = () => {
 
     return (
         <main className="min-h-screen flex items-center justify-center bg-gray-50 px-4" role="main" aria-label="404 Page Not Found">
-            <section className="text-center">
+            <section className="text-center" aria-label="404 error information and navigation options">
                 <div className="mb-8">
                     <h1 className="text-9xl font-bold text-pink-500 mb-4">404</h1>
                     <h2 className="text-3xl font-semibold text-gray-800 mb-4">Page Not Found</h2>
