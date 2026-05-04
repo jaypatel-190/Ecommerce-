@@ -39,7 +39,7 @@ const Category = () => {
   const navigate = useNavigate();
   return (
     <div aria-label="ShopWave product categories">
-      <div className="flex flex-col mt-5">
+      <div className="flex flex-col mt-5" aria-label="Category navigation section">
         <div className="flex overflow-x-scroll lg:justify-center no-scrollbar" aria-label="Scrollable category list">
           <div className="flex " role="list" aria-label="Product categories">
             {categories.map((item, index) => {
