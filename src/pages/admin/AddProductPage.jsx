@@ -82,7 +82,7 @@ const AddProductPage = () => {
     }
   };
   return (
-    <div>
+    <div aria-label="Add product page">
       <div className="flex justify-center items-center h-screen">
         {loading && <Loader />}
         {/* Login Form  */}
