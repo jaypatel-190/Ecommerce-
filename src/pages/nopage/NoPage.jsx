@@ -47,7 +47,7 @@ const NoPage = () => {
                         Go Back to Home
                     </button>
 
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-gray-500" aria-label="Alternative navigation option">
                         Or{' '}
                         <button
                             onClick={() => window.history.back()}
