@@ -44,7 +44,7 @@ const Profile = ({ user, logout }) => {
       </div>
       {isDropdownOpen && (
         <ul className="absolute top-full left-0 text-black bg-white border border-gray-200 rounded-md shadow-md z-10" role="menu" aria-label="User profile menu options">
-          <li className="py-2 px-4 hover:bg-gray-100" role="none">
+          <li className="py-2 px-4 hover:bg-gray-100" role="none" aria-label="Dashboard menu item">
             {user.role === "user" && (
               <Link
                 to={"/user-dashboard"}
