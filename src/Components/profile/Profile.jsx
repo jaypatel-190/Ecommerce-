@@ -23,7 +23,7 @@ const Profile = ({ user, logout }) => {
   }
 
   return (
-    <div className="relative cursor-pointer">
+    <div className="relative cursor-pointer" aria-label="User profile dropdown">
       <div
         className="flex items-center text-white font-medium text-md ml-4 "
         onClick={toggleDropdown}
