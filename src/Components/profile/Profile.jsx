@@ -43,7 +43,7 @@ const Profile = ({ user, logout }) => {
         <span className="ml-1">{user.firstName || 'User'}</span>
       </div>
       {isDropdownOpen && (
-        <ul className="absolute top-full left-0 text-black bg-white border border-gray-200 rounded-md shadow-md z-10" role="menu">
+        <ul className="absolute top-full left-0 text-black bg-white border border-gray-200 rounded-md shadow-md z-10" role="menu" aria-label="User profile menu options">
           <li className="py-2 px-4 hover:bg-gray-100" role="none">
             {user.role === "user" && (
               <Link
