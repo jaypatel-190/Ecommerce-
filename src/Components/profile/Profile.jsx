@@ -84,7 +84,7 @@ const Profile = ({ user, logout }) => {
           >
             {user.role || 'user'} Info
             {isUserInfoDropdownOpen && (
-              <ul className="absolute top-0 right-full text-black w-max bg-white border border-gray-200 rounded-md shadow-md z-10" role="menu">
+              <ul className="absolute top-0 right-full text-black w-max bg-white border border-gray-200 rounded-md shadow-md z-10" role="menu" aria-label="User information details">
                 <li className="py-2 px-4" role="menuitem">{`First Name: ${user.firstName || 'N/A'}`}</li>
                 <li className="py-2 px-4" role="menuitem">{`Last Name: ${user.lastName || 'N/A'}`}</li>
                 <li className="py-2 px-4" role="menuitem">{`Date: ${user.date || 'N/A'}`}</li>
