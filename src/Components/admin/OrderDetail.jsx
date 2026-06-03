@@ -4,6 +4,28 @@ import myContext from "../../context/myContext";
 const OrderDetail = () => {
   const context = useContext(myContext);
   const { getAllOrder, orderDelete } = context;
+
+  const handleDeleteOrder = (orderId, itemId, itemTitle) => {
+    const confirmDelete = window.confirm(`Are you sure you want to delete "${itemTitle}" from this order? This action cannot be undone.`);
+    if (confirmDelete) {
+      orderDelete(orderId, itemId);
+    }
+  };
+
+  if (!getAllOrder || getAllOrder.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center py-20">
+        <div className="text-gray-400 text-center">
+          <svg className="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+          </svg>
+          <h2 className="text-xl font-semibold mb-2">No Orders Found</h2>
+          <p className="text-gray-500">There are no customer orders in the system yet.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div>
@@ -209,12 +231,12 @@ const OrderDetail = () => {
                           </td>
 
                           <td
-                            onClick={() => orderDelete(order.id, item.id)}
+                            onClick={() => handleDeleteOrder(order.id, item.id, title)}
                             className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer "
                             role="button"
                             tabIndex={0}
                             aria-label={`Delete order item ${title}`}
-                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); orderDelete(order.id, item.id); } }}
+                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleDeleteOrder(order.id, item.id, title); } }}
                           >
                             Delete
                           </td>
