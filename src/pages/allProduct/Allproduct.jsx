@@ -5,12 +5,13 @@ import myContext from "../../context/myContext";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, deleteFromCart } from "../../redux/cartSlice";
 import toast from "react-hot-toast";
+import Loader from "../../Components/loader/Loader";
 
 const AllProduct = () => {
   const navigate = useNavigate();
 
   const context = useContext(myContext);
-  const { getAllProduct } = context;
+  const { getAllProduct, loading } = context;
 
   const cartItems = useSelector((state) => state.cart) || [];
 
@@ -47,8 +48,17 @@ const AllProduct = () => {
         <section className="text-gray-600 body-font">
           <div className="container px-5 lg:px-0 py-5 mx-auto">
             <div className="flex flex-wrap -m-4">
-              {getAllProduct.map((item, index) => {
-                const { id, title, price, productImageUrl } = item;
+              {loading ? (
+                <div className="w-full flex justify-center py-10">
+                  <Loader />
+                </div>
+              ) : getAllProduct.length === 0 ? (
+                <div className="w-full text-center py-10">
+                  <p className="text-lg font-medium text-gray-500">No products found.</p>
+                </div>
+              ) : (
+                getAllProduct.map((item, index) => {
+                  const { id, title, price, productImageUrl } = item;
                 return (
                   <div key={index} className="p-4 w-full md:w-1/2 lg:w-1/4">
                     <div className="h-full border border-gray-300 rounded-xl overflow-hidden shadow-md cursor-pointer">
@@ -117,7 +127,7 @@ const AllProduct = () => {
                     </div>
                   </div>
                 );
-              })}
+              }))}
             </div>
           </div>
         </section>
