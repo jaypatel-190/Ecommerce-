@@ -12,7 +12,53 @@ const UserDashboard = () => {
 
   return (
     <Layout>
-
+      {/* Top User Info Section */}
+      <div className="container mx-auto px-4 py-5 lg:py-8 max-w-6xl">
+        <div className="bg-pink-50 py-6 rounded-xl border border-pink-100 flex flex-col items-center justify-center shadow-sm">
+          {/* User Icon SVG */}
+          <div className="flex justify-center mb-4 text-pink-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={64}
+              height={64}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={1.5}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-user-circle"
+            >
+              <circle cx={12} cy={12} r={10} />
+              <circle cx={12} cy={10} r={3} />
+              <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
+            </svg>
+          </div>
+          {/* Details */}
+          <div className="text-center space-y-1">
+            <h1 className="text-lg">
+              <span className="font-bold text-gray-700">Name:</span>{" "}
+              <span className="text-gray-600">
+                {user?.name || `${user?.firstName || ""} ${user?.lastName || ""}`.trim() || "User"}
+              </span>
+            </h1>
+            <h1 className="text-lg">
+              <span className="font-bold text-gray-700">Email:</span>{" "}
+              <span className="text-gray-600">{user?.email || "N/A"}</span>
+            </h1>
+            {user?.date && (
+              <h1 className="text-lg">
+                <span className="font-bold text-gray-700">Date:</span>{" "}
+                <span className="text-gray-600">{user?.date}</span>
+              </h1>
+            )}
+            <h1 className="text-lg">
+              <span className="font-bold text-gray-700">Role:</span>{" "}
+              <span className="text-gray-600 capitalize">{user?.role || "user"}</span>
+            </h1>
+          </div>
+        </div>
+      </div>
 
       {/* bottom  */}
       <div className="bottom">
