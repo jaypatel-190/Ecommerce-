@@ -95,6 +95,11 @@ const UpdateProductPage = () => {
     ) {
       return toast.error("All fields are required");
     }
+
+    if (parseFloat(product.price) <= 0) {
+      return toast.error("Product price must be a positive number");
+    }
+
     setLoading(true);
     try {
       await setDoc(doc(fireDB, "products", id), product);
