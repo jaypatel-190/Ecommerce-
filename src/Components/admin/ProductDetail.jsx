@@ -27,9 +27,33 @@ const ProductDetail = () => {
         } catch (error) {
             console.error('Error deleting product:', id, error);
             toast.error('Failed to delete product')
-            setLoading(false)
         }
     }
+
+    if (!getAllProduct || getAllProduct.length === 0) {
+        return (
+            <div>
+                <div className="py-5 flex justify-between items-center">
+                    <h1 className=" text-xl text-pink-300 font-bold" aria-label="All products section heading">
+                        All Products
+                    </h1>
+                    <Link to={'/addproduct'} aria-label="Add new product">
+                        <button className="px-5 py-2 bg-pink-50 border border-pink-100 rounded-lg" role="button">Add Product</button>
+                    </Link>
+                </div>
+                <div className="flex flex-col items-center justify-center py-20">
+                    <div className="text-gray-400 text-center">
+                        <svg className="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                        <h2 className="text-xl font-semibold mb-2">No Products Found</h2>
+                        <p className="text-gray-500">There are no products in the database yet.</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div>
             <div className="py-5 flex justify-between items-center">
