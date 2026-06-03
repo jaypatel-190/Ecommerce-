@@ -99,7 +99,7 @@ const UserDetail = () => {
 
                                             <td
                                                 className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                                                {value.firstName} {value.lastName}
+                                                {value.name || `${value.firstName || ""} ${value.lastName || ""}`.trim() || "N/A"}
                                             </td>
 
                                             <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 cursor-pointer ">
