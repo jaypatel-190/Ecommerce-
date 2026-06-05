@@ -101,6 +101,12 @@ const ProductInfo = () => {
       return toast.error("Please enter a valid 10-digit mobile number");
     }
 
+    // Validate pincode (should be 6 digits)
+    const pincodeRegex = /^[0-9]{6}$/;
+    if (!pincodeRegex.test(addressInfo.pincode)) {
+      return toast.error("Please enter a valid 6-digit pincode");
+    }
+
     const user = JSON.parse(localStorage.getItem("users"));
     const orderInfo = {
       cartItems,
