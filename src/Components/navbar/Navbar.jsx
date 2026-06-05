@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   // Cart items
-  const cartItems = useSelector((state) => state.cart);
+  const cartItems = useSelector((state) => state.cart) || [];
 
   // Calculate total quantity of items in cart
   const totalCartQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
