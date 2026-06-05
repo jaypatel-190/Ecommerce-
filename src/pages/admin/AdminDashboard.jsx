@@ -39,7 +39,7 @@ const AdminDashboard = () => {
                             {/* Name  */}
                             <h1 className=" text-center text-lg">
                                 <span className=" font-bold">Name : </span>
-                                {user?.name}
+                                {user?.name || `${user?.firstName || ""} ${user?.lastName || ""}`.trim() || "Admin"}
                             </h1>
 
                             {/* Email  */}
