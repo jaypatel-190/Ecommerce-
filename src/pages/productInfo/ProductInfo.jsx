@@ -22,10 +22,15 @@ const ProductInfo = () => {
     setLoading(true);
     try {
       const productTemp = await getDoc(doc(fireDB, "products", id));
-      setProduct({ ...productTemp.data(), id: productTemp.id });
+      if (productTemp.exists()) {
+        setProduct({ ...productTemp.data(), id: productTemp.id });
+      } else {
+        setProduct(null);
+      }
       setLoading(false);
     } catch (error) {
       console.error('Error fetching product data:', error);
+      setProduct(null);
       setLoading(false);
       toast.error('Failed to load product');
     }
@@ -146,6 +151,14 @@ const ProductInfo = () => {
         {loading ? (
           <div className="flex justify-center items-center">
             <Loader />
+          </div>
+        ) : product === null ? (
+          <div className="flex flex-col items-center justify-center py-20 text-center">
+            <svg className="w-16 h-16 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h2 className="text-xl font-semibold mb-2 text-gray-700">Product Not Found</h2>
+            <p className="text-gray-500">The product you are looking for does not exist or has been removed.</p>
           </div>
         ) : (
           <div className="max-w-6xl px-4 mx-auto">
