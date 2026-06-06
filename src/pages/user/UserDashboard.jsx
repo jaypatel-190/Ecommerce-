@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import Layout from "../../Components/layout/Layout";
 import myContext from "../../context/myContext";
 import Loader from "../../Components/loader/Loader";
@@ -72,115 +73,140 @@ const UserDashboard = () => {
           </div>
 
           {/* main 2 */}
-          {Array.isArray(getAllOrder) && getAllOrder
-            .filter((obj) => obj.userid === user?.uid)
-            .map((order, index) => {
-              return (
-                <div key={order.id || index}>
-                  {order.cartItems.map((item, itemIndex) => {
-                    const {
-                      id,
-                      date,
-                      quantity,
-                      price,
-                      title,
-                      productImageUrl,
-                      category,
-                    } = item;
-                    const { status } = order;
-                    return (
-                      <div
-                        key={`${order.id}-${item.id || itemIndex}`}
-                        className="mt-5 flex flex-col overflow-hidden rounded-xl border border-pink-100 md:flex-row"
-                      >
-                        {/* main 3  */}
-                        <div className="w-full border-r border-pink-100 bg-pink-50 md:max-w-xs">
-                          {/* left  */}
-                          <div className="p-8">
-                            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-1 gap-3">
-                              <div className="mb-1">
-                                <div className="text-sm font-semibold text-black">
-                                  Order Id
+          {Array.isArray(getAllOrder) &&
+          getAllOrder.filter((obj) => obj.userid === user?.uid).length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-12">
+              <svg
+                className="w-16 h-16 text-gray-300 mb-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                />
+              </svg>
+              <p className="text-gray-500 text-lg mb-4">You have not placed any orders yet.</p>
+              <Link to="/allproduct">
+                <button className="px-5 py-2 bg-pink-500 text-white font-bold rounded-lg hover:bg-pink-600 transition-colors">
+                  Shop Now
+                </button>
+              </Link>
+            </div>
+          ) : (
+            getAllOrder
+              .filter((obj) => obj.userid === user?.uid)
+              .map((order, index) => {
+                return (
+                  <div key={order.id || index}>
+                    {order.cartItems.map((item, itemIndex) => {
+                      const {
+                        id,
+                        date,
+                        quantity,
+                        price,
+                        title,
+                        productImageUrl,
+                        category,
+                      } = item;
+                      const { status } = order;
+                      return (
+                        <div
+                          key={`${order.id}-${item.id || itemIndex}`}
+                          className="mt-5 flex flex-col overflow-hidden rounded-xl border border-pink-100 md:flex-row"
+                        >
+                          {/* main 3  */}
+                          <div className="w-full border-r border-pink-100 bg-pink-50 md:max-w-xs">
+                            {/* left  */}
+                            <div className="p-8">
+                              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-1 gap-3">
+                                <div className="mb-1">
+                                  <div className="text-sm font-semibold text-black">
+                                    Order Id
+                                  </div>
+                                  <div className="text-sm font-medium text-gray-900 break-words ">
+                                    #{id}
+                                  </div>
                                 </div>
-                                <div className="text-sm font-medium text-gray-900 break-words ">
-                                  #{id}
-                                </div>
-                              </div>
 
-                              <div className="mb-1">
-                                <div className="text-sm font-semibold">
-                                  Date
+                                <div className="mb-1">
+                                  <div className="text-sm font-semibold">
+                                    Date
+                                  </div>
+                                  <div className="text-sm font-medium text-gray-900">
+                                    {order.date}
+                                  </div>
                                 </div>
-                                <div className="text-sm font-medium text-gray-900">
-                                  {order.date}
-                                </div>
-                              </div>
 
-                              <div className="mb-1">
-                                <div className="text-sm font-semibold">
-                                  Total Amount
+                                <div className="mb-1">
+                                  <div className="text-sm font-semibold">
+                                    Total Amount
+                                  </div>
+                                  <div className="text-sm font-medium text-gray-900">
+                                    ₹ {price * quantity}
+                                  </div>
                                 </div>
-                                <div className="text-sm font-medium text-gray-900">
-                                  ₹ {price * quantity}
-                                </div>
-                              </div>
 
-                              <div className="mb-1">
-                                <div className="text-sm font-semibold" id="order-status-label">
-                                  Order Status
-                                </div>
-                                <div className="text-sm font-medium text-green-800 first-letter:uppercase" role="status" aria-live="polite" aria-labelledby="order-status-label">
-                                  {status}
+                                <div className="mb-1">
+                                  <div className="text-sm font-semibold" id="order-status-label">
+                                    Order Status
+                                  </div>
+                                  <div className="text-sm font-medium text-green-800 first-letter:uppercase" role="status" aria-live="polite" aria-labelledby="order-status-label">
+                                    {status}
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        {/* right  */}
-                        <div className="flex-1">
-                          <div className="p-8">
-                            <ul className="-my-7 divide-y divide-gray-200">
-                              <li className="flex flex-col justify-between space-x-5 py-7 md:flex-row">
-                                <div className="flex flex-1 items-stretch">
-                                  <div className="flex-shrink-0">
-                                    <img
-                                      className="h-40 w-40 rounded-lg border border-gray-200 object-contain"
-                                      src={productImageUrl}
-                                      alt={`Order item ${title}`}
-                                    />
-                                  </div>
-
-                                  <div className="ml-5 flex flex-col justify-between">
-                                    <div className="flex-1">
-                                      <p className="text-sm font-bold text-gray-900">
-                                        {title}
-                                      </p>
-                                      <p className="mt-1.5 text-sm font-medium text-gray-500">
-                                        {category}
-                                      </p>
+                          {/* right  */}
+                          <div className="flex-1">
+                            <div className="p-8">
+                              <ul className="-my-7 divide-y divide-gray-200">
+                                <li className="flex flex-col justify-between space-x-5 py-7 md:flex-row">
+                                  <div className="flex flex-1 items-stretch">
+                                    <div className="flex-shrink-0">
+                                      <img
+                                        className="h-40 w-40 rounded-lg border border-gray-200 object-contain"
+                                        src={productImageUrl}
+                                        alt={`Order item ${title}`}
+                                      />
                                     </div>
 
-                                    <p className="mt-4 text-sm font-medium text-gray-500">
-                                      x {quantity}
+                                    <div className="ml-5 flex flex-col justify-between">
+                                      <div className="flex-1">
+                                        <p className="text-sm font-bold text-gray-900">
+                                          {title}
+                                        </p>
+                                        <p className="mt-1.5 text-sm font-medium text-gray-500">
+                                          {category}
+                                        </p>
+                                      </div>
+
+                                      <p className="mt-4 text-sm font-medium text-gray-500">
+                                        x {quantity}
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                  <div className="ml-auto flex flex-col items-end justify-between">
+                                    <p className="text-right text-sm font-bold text-gray-900">
+                                      ₹ {price}
                                     </p>
                                   </div>
-                                </div>
-
-                                <div className="ml-auto flex flex-col items-end justify-between">
-                                  <p className="text-right text-sm font-bold text-gray-900">
-                                    ₹ {price}
-                                  </p>
-                                </div>
-                              </li>
-                            </ul>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              );
-            })}
+                      );
+                    })}
+                  </div>
+                );
+              })
+          )}
         </div>
       </div>
 
