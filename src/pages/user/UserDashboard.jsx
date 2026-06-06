@@ -172,6 +172,9 @@ const UserDashboard = () => {
                                         className="h-40 w-40 rounded-lg border border-gray-200 object-contain"
                                         src={productImageUrl}
                                         alt={`Order item ${title}`}
+                                        onError={(e) => {
+                                          e.target.src = 'https://placehold.co/300x300?text=Image+Not+Found';
+                                        }}
                                       />
                                     </div>
 
