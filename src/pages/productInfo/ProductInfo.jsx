@@ -31,7 +31,7 @@ const ProductInfo = () => {
     }
   };
 
-  const cartItems = useSelector((state) => state.cart);
+  const cartItems = useSelector((state) => state.cart) || [];
   const dispatch = useDispatch();
 
   const addCart = (item) => {
