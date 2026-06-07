@@ -170,6 +170,9 @@ const ProductInfo = () => {
                     src={product?.productImageUrl}
                     alt={`Product image of ${product?.title}`}
                     title={`${product?.title} - ₹${product?.price}`}
+                    onError={(e) => {
+                      e.target.src = 'https://placehold.co/300x300?text=Image+Not+Found';
+                    }}
                   />
                 </div>
               </div>
