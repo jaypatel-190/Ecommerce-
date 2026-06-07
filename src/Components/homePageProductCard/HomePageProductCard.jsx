@@ -103,7 +103,7 @@ const HomePageProductCard = () => {
                             loading="lazy"
                             onLoad={() => handleImageLoad(id)}
                             onError={(e) => {
-                              e.target.src = 'https://via.placeholder.com/300x300?text=Image+Not+Found';
+                              e.target.src = 'https://placehold.co/300x300?text=Image+Not+Found';
                               handleImageLoad(id);
                             }}
                             tabIndex={0}
