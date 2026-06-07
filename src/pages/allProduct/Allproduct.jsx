@@ -69,6 +69,9 @@ const AllProduct = () => {
                         alt={`${title} product image`}
                         title={`${title} - ₹${price}`}
                         role="button"
+                        onError={(e) => {
+                          e.target.src = 'https://placehold.co/300x300?text=Image+Not+Found';
+                        }}
                         tabIndex={0}
                         onKeyDown={(e) => {
                           if (e.key === 'Enter' || e.key === ' ') {
