@@ -179,7 +179,13 @@ const OrderDetail = () => {
                           </td>
 
                           <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                            <img src={productImageUrl} alt={`Product image for ${title}`} />
+                            <img
+                              src={productImageUrl}
+                              alt={`Product image for ${title}`}
+                              onError={(e) => {
+                                e.target.src = 'https://placehold.co/300x300?text=Image+Not+Found';
+                              }}
+                            />
                           </td>
 
                           <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
