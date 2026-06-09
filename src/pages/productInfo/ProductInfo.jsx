@@ -113,8 +113,13 @@ const ProductInfo = () => {
     }
 
     const user = JSON.parse(localStorage.getItem("users"));
+    const cartProduct = cartItems.find((p) => p.id === product.id);
+    const orderProduct = {
+      ...product,
+      quantity: cartProduct ? cartProduct.quantity : 1,
+    };
     const orderInfo = {
-      cartItems,
+      cartItems: [orderProduct],
       addressInfo,
       email: user.email,
       userid: user.uid,
