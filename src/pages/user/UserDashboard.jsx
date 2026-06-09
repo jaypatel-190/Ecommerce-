@@ -105,7 +105,6 @@ const UserDashboard = () => {
                     {order.cartItems.map((item, itemIndex) => {
                       const {
                         id,
-                        date,
                         quantity,
                         price,
                         title,
