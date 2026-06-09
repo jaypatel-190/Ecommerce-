@@ -99,7 +99,14 @@ const ProductDetail = () => {
                                     </td>
                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
                                         <div className="flex justify-center">
-                                            <img className="w-20 " src={productImageUrl} alt={`Product image for ${title}`} />
+                                            <img
+                                                className="w-20 "
+                                                src={productImageUrl}
+                                                alt={`Product image for ${title}`}
+                                                onError={(e) => {
+                                                    e.target.src = 'https://placehold.co/300x300?text=Image+Not+Found';
+                                                }}
+                                            />
                                         </div>
                                     </td>
                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 first-letter:uppercase ">
