@@ -85,8 +85,8 @@ const Profile = ({ user, logout }) => {
             {user.role || 'user'} Info
             {isUserInfoDropdownOpen && (
               <ul className="absolute top-0 right-full text-black w-max bg-white border border-gray-200 rounded-md shadow-md z-10" role="menu" aria-label="User information details">
-                <li className="py-2 px-4" role="menuitem" aria-label={`First Name: ${user.firstName || 'N/A'}`}>{`First Name: ${user.firstName || 'N/A'}`}</li>
-                <li className="py-2 px-4" role="menuitem" aria-label={`Last Name: ${user.lastName || 'N/A'}`}>{`Last Name: ${user.lastName || 'N/A'}`}</li>
+                <li className="py-2 px-4" role="menuitem" aria-label={`First Name: ${user.firstName || (user.name ? user.name.split(' ')[0] : 'N/A')}`}>{`First Name: ${user.firstName || (user.name ? user.name.split(' ')[0] : 'N/A')}`}</li>
+                <li className="py-2 px-4" role="menuitem" aria-label={`Last Name: ${user.lastName || (user.name && user.name.split(' ').length > 1 ? user.name.split(' ').slice(1).join(' ') : 'N/A')}`}>{`Last Name: ${user.lastName || (user.name && user.name.split(' ').length > 1 ? user.name.split(' ').slice(1).join(' ') : 'N/A')}`}</li>
                 <li className="py-2 px-4" role="menuitem" aria-label={`Date: ${user.date || 'N/A'}`}>{`Date: ${user.date || 'N/A'}`}</li>
                 <li className="py-2 px-4" role="menuitem" aria-label={`Contact Number: ${user.contactNumber || 'N/A'}`}>{`Contact Number: ${user.contactNumber || 'N/A'}`}</li>
               </ul>
