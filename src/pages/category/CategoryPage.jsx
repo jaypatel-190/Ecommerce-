@@ -75,6 +75,9 @@ const CategoryPage = () => {
                               src={productImageUrl}
                               alt={`${title} product image`}
                               role="button"
+                              onError={(e) => {
+                                e.target.src = 'https://placehold.co/300x300?text=Image+Not+Found';
+                              }}
                               tabIndex={0}
                               onKeyDown={(e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
