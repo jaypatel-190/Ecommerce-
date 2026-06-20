@@ -149,6 +149,9 @@ const CartPage = () => {
                               src={productImageUrl}
                               alt={`Cart item ${title}`}
                               className="sm:h-38 sm:w-38 h-24 w-24 rounded-md object-contain object-center"
+                              onError={(e) => {
+                                e.target.src = 'https://placehold.co/300x300?text=Image+Not+Found';
+                              }}
                             />
                           </div>
 
