@@ -91,7 +91,7 @@ const UserDetail = () => {
                             {
                                 getAllUser.map((value, index) => {
                                     return (
-                                        <tr key={index} className="text-pink-300">
+                                        <tr key={value.id} className="text-pink-300">
                                             <td
                                                 className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 ">
                                                 {index + 1}
