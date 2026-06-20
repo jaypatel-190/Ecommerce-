@@ -12,7 +12,7 @@ const CategoryPage = () => {
   const { categoryname } = useParams();
 
   const context = useContext(myContext);
-  const { getAllProduct, loading } = context;
+  const { getAllProduct, loading, brandName } = context;
 
   const navigate = useNavigate();
 
@@ -88,7 +88,7 @@ const CategoryPage = () => {
                             />
                             <div className="p-6">
                               <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                                ShopWave
+                                {brandName}
                               </h2>
                               <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                                 {title.substring(0, 25)}

@@ -11,7 +11,7 @@ const AllProduct = () => {
   const navigate = useNavigate();
 
   const context = useContext(myContext);
-  const { getAllProduct, loading } = context;
+  const { getAllProduct, loading, brandName } = context;
 
   const cartItems = useSelector((state) => state.cart) || [];
 
@@ -82,7 +82,7 @@ const AllProduct = () => {
                       />
                       <div className="p-6">
                         <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                          ShopWave
+                          {brandName}
                         </h2>
                         <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                           {title.length > 25 ? `${title.substring(0, 25)}...` : title}
