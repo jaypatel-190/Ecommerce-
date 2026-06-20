@@ -27,6 +27,7 @@ const LoadingSpinner = () => (
   </div>
 );
 
+// Main Application Component
 const App = () => {
   return (
     <MyState>

@@ -13,8 +13,6 @@ const Footer = () => {
           <Link
             to="/"
             className="ml-1 text-gray-100"
-            rel="noopener noreferrer"
-            target="_blank"
           >
             @ShopWave.com
           </Link>
