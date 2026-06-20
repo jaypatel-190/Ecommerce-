@@ -142,7 +142,7 @@ const CartPage = () => {
                       category,
                     } = item;
                     return (
-                      <div key={index} className="">
+                      <div key={id} className="">
                         <li className="flex py-6 sm:py-6 ">
                           <div className="flex-shrink-0">
                             <img
