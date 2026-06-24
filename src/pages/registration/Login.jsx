@@ -6,7 +6,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, fireDB } from "../../firebase/FirebaseConfig";
 import Loader from "../../Components/loader/Loader";
 import EyeIcon from "../../Components/EyeIcon";
-import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const Login = () => {
     const context = useContext(myContext);
@@ -51,14 +51,18 @@ const Login = () => {
                     collection(fireDB, "user"),
                     where('uid', '==', users?.user?.uid)
                 );
-                const data = onSnapshot(q, (QuerySnapshot) => {
-                    let user;
-                    QuerySnapshot.forEach((doc) => user = doc.data());
-                    localStorage.setItem("users", JSON.stringify(user))
+                
+                // Use getDocs instead of onSnapshot for a one-time fetch
+                const querySnapshot = await getDocs(q);
+                let user;
+                querySnapshot.forEach((doc) => user = doc.data());
+                
+                if (user) {
+                    localStorage.setItem("users", JSON.stringify(user));
                     setUserLogin({
                         email: "",
                         password: ""
-                    })
+                    });
                     toast.success("Login Successfully");
                     setLoading(false);
                     if (user.role === "user") {
@@ -66,8 +70,10 @@ const Login = () => {
                     } else {
                         navigate('/admin-dashboard');
                     }
-                });
-                return () => data;
+                } else {
+                    toast.error('User data not found');
+                    setLoading(false);
+                }
             } catch (error) {
                 console.error('Error fetching user data:', error);
                 setLoading(false);
