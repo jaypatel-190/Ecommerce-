@@ -265,7 +265,7 @@ const ProductInfo = () => {
                       Enter Your Shipping Details
                     </h3>
                     <div className="mt-2">
-                      <form>
+                      <form onSubmit={(e) => { e.preventDefault(); handleBuyNow(); }}>
                         <div className="flex flex-col">
                           <div className="mb-3">
                             <input
