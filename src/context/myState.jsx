@@ -107,16 +107,6 @@ function MyState({ children }) {
       } else {
         // Update the order document with the modified cartItems array
         await updateDoc(orderDocRef, { cartItems: updatedCartItems });
-
-        // Update the getAllOrder state by updating the order with the new cartItems array
-        setGetAllOrder((prevOrders) => {
-          return prevOrders.map((order) => {
-            if (order.id === orderId) {
-              return { ...order, cartItems: updatedCartItems };
-            }
-            return order;
-          });
-        });
       }
 
       toast.success("Item deleted successfully");

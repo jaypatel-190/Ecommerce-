@@ -104,7 +104,6 @@ const UpdateProductPage = () => {
     try {
       await setDoc(doc(fireDB, "products", id), product);
       toast.success("Product Updated successfully");
-      getAllProductFunction();
       setLoading(false);
       navigate("/admin-dashboard");
     } catch (error) {

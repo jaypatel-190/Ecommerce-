@@ -22,7 +22,6 @@ const ProductDetail = () => {
         try {
             await deleteDoc(doc(fireDB, 'products', id))
             toast.success('Product Deleted successfully')
-            getAllProductFunction();
             setLoading(false)
         } catch (error) {
             console.error('Error deleting product:', id, error);
