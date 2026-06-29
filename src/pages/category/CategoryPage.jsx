@@ -91,7 +91,7 @@ const CategoryPage = () => {
                                 {brandName}
                               </h2>
                               <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                                {title.substring(0, 25)}
+                                {title.length > 25 ? `${title.substring(0, 25)}...` : title}
                               </h1>
                               <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                                 ₹{price}
