@@ -52,6 +52,7 @@ const Sidebar = ({ toggleSidebar }) => {
   const logout = () => {
     localStorage.removeItem("users");
     navigate("/login");
+    toggleSidebar();
   };
 
   const handleImageError = (categoryName) => {
@@ -111,6 +112,7 @@ const Sidebar = ({ toggleSidebar }) => {
               <Link
                 key={index}
                 to={`/category/${item.name}`}
+                onClick={toggleSidebar}
                 className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600"
                 aria-label={`Browse ${item.name} category`}
                 role="menuitem"
@@ -139,6 +141,7 @@ const Sidebar = ({ toggleSidebar }) => {
               <>
                 <Link
                   to="/signup"
+                  onClick={toggleSidebar}
                   className={`flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600 ${location.pathname === "/signup"
                     ? "border-b-2 border-white"
                     : ""
@@ -156,6 +159,7 @@ const Sidebar = ({ toggleSidebar }) => {
                 {user.role === "user" && (
                   <Link
                     to="/user-dashboard"
+                    onClick={toggleSidebar}
                     className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600"
                     aria-label="Go to user dashboard"
                     role="menuitem"
@@ -168,6 +172,7 @@ const Sidebar = ({ toggleSidebar }) => {
                 {user.role === "admin" && (
                   <Link
                     to="/admin-dashboard"
+                    onClick={toggleSidebar}
                     className="flex items-center space-x-4 p-2 hover:bg-pink-500 rounded-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-600"
                     aria-label="Go to admin dashboard"
                     role="menuitem"

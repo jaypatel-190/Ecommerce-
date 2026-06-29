@@ -10,6 +10,7 @@ const SearchBar = () => {
     const [search, setSearch] = useState("");
     const [selectedIndex, setSelectedIndex] = useState(-1);
     const inputRef = useRef(null);
+    const searchContainerRef = useRef(null);
 
     // Filter Search Data
     const filterSearchData = getAllProduct.filter((obj) => obj.title.toLowerCase().includes(search.toLowerCase())).slice(0, 8)
@@ -57,7 +58,7 @@ const SearchBar = () => {
     // Click outside handler to close dropdown
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (inputRef.current && !inputRef.current.contains(event.target)) {
+            if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
                 setSearch("");
                 setSelectedIndex(-1);
             }
@@ -75,7 +76,7 @@ const SearchBar = () => {
     }, [search]);
 
     return (
-        <div className="" role="search">
+        <div ref={searchContainerRef} className="relative" role="search">
             {/* search input  */}
             <div className="input flex justify-center">
                 <input
@@ -110,7 +111,11 @@ const SearchBar = () => {
                                         key={item.id}
                                         id={`search-option-${index}`}
                                         className={`py-2 px-2 cursor-pointer ${selectedIndex === index ? 'bg-gray-300' : ''}`}
-                                        onClick={() => navigate(`/productinfo/${item.id}`)}
+                                        onClick={() => {
+                                            navigate(`/productinfo/${item.id}`);
+                                            setSearch("");
+                                            setSelectedIndex(-1);
+                                        }}
                                         onMouseEnter={() => setSelectedIndex(index)}
                                         role="option"
                                         aria-selected={selectedIndex === index}
