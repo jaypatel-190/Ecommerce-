@@ -34,19 +34,39 @@ const Signup = () => {
     const userSignupFunction = async () => {
         // validation
         if (
-            userSignup.firstName === "" ||
-            userSignup.lastName === "" ||
-            userSignup.email === "" ||
+            userSignup.firstName.trim() === "" ||
+            userSignup.lastName.trim() === "" ||
+            userSignup.email.trim() === "" ||
             userSignup.password === "" ||
             userSignup.confirmPassword === "" ||
-            userSignup.contactNumber === ""
+            userSignup.contactNumber.trim() === ""
         ) {
-            toast.error("All Fields are required");
+            toast.error("All fields are required");
+            return;
+        }
+
+        // email format validation
+        const emailRegex = /^[\w\.-]+@[\w\.-]+\.\w+$/;
+        if (!emailRegex.test(userSignup.email.trim())) {
+            toast.error("Please enter a valid email address");
+            return;
+        }
+
+        // password length validation
+        if (userSignup.password.length < 6) {
+            toast.error("Password must be at least 6 characters long");
             return;
         }
 
         if (userSignup.password !== userSignup.confirmPassword) {
             toast.error("Passwords do not match");
+            return;
+        }
+
+        // contact number validation (10 digits)
+        const contactRegex = /^[0-9]{10}$/;
+        if (!contactRegex.test(userSignup.contactNumber.trim())) {
+            toast.error("Please enter a valid 10-digit contact number");
             return;
         }
 
