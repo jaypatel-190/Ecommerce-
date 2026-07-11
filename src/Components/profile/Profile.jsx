@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const Profile = ({ user, logout }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isUserInfoDropdownOpen, setIsUserInfoDropdownOpen] = useState(false);
+  const profileRef = useRef(null);
+
+  // Click outside handler to close dropdowns
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+        setIsUserInfoDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // Function to toggle main dropdown visibility
   const toggleDropdown = () => {
@@ -23,7 +39,7 @@ const Profile = ({ user, logout }) => {
   }
 
   return (
-    <div className="relative cursor-pointer" aria-label="User profile dropdown">
+    <div ref={profileRef} className="relative cursor-pointer" aria-label="User profile dropdown">
       <div
         className="flex items-center text-white font-medium text-md ml-4 "
         onClick={toggleDropdown}
