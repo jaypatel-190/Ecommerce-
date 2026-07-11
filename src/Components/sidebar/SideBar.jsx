@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
+import { useDispatch } from "react-redux";
+import { deleteAllFromCart } from "../../redux/cartSlice";
 
 const category = [
   {
@@ -48,9 +50,11 @@ const Sidebar = ({ toggleSidebar }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [failedImages, setFailedImages] = useState(new Set());
+  const dispatch = useDispatch();
 
   const logout = () => {
     localStorage.removeItem("users");
+    dispatch(deleteAllFromCart());
     navigate("/login");
     toggleSidebar();
   };

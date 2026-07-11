@@ -3,16 +3,18 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar";
 import Sidebar from "../sidebar/SideBar";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Profile from "../profile/Profile";
 import toast from "react-hot-toast";
 import CIcon from "./CIcon";
+import { deleteAllFromCart } from "../../redux/cartSlice";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("users")); // Get user from local storage
+  const dispatch = useDispatch();
 
   // Function to toggle sidebar visibility
   const toggleSidebar = () => {
@@ -22,6 +24,7 @@ const Navbar = () => {
   // Logout function
   const logout = () => {
     localStorage.removeItem("users");
+    dispatch(deleteAllFromCart());
     toast.success("Logged out successfully!");
     navigate("/login");
   };
