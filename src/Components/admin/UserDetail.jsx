@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import myContext from "../../context/myContext";
+import Loader from "../loader/Loader";
 
 const UserDetail = () => {
     const context = useContext(myContext);
-    const { getAllUser } = context;
+    const { loading, getAllUser } = context;
 
     // Function to format date in a readable way
     const formatDate = (dateString) => {
@@ -20,6 +21,14 @@ const UserDetail = () => {
             return dateString;
         }
     };
+
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center py-20">
+                <Loader />
+            </div>
+        );
+    }
 
     if (!getAllUser || getAllUser.length === 0) {
         return (

@@ -73,7 +73,7 @@ const UserDashboard = () => {
           </div>
 
           {/* main 2 */}
-          {Array.isArray(getAllOrder) &&
+          {!loading && Array.isArray(getAllOrder) &&
           getAllOrder.filter((obj) => obj.userid === user?.uid).length === 0 ? (
             <div className="flex flex-col items-center justify-center py-12">
               <svg
@@ -92,12 +92,12 @@ const UserDashboard = () => {
               <p className="text-gray-500 text-lg mb-4">You have not placed any orders yet.</p>
               <Link to="/allproduct">
                 <button className="px-5 py-2 bg-pink-500 text-white font-bold rounded-lg hover:bg-pink-600 transition-colors">
-                  Shop Now
+                   Shop Now
                 </button>
               </Link>
             </div>
           ) : (
-            getAllOrder
+            !loading && getAllOrder
               .filter((obj) => obj.userid === user?.uid)
               .map((order, index) => {
                 return (

@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import myContext from "../../context/myContext";
+import Loader from "../loader/Loader";
 
 const OrderDetail = () => {
   const context = useContext(myContext);
-  const { getAllOrder, orderDelete } = context;
+  const { loading, getAllOrder, orderDelete } = context;
 
   const handleDeleteOrder = (orderId, itemId, itemTitle) => {
     const confirmDelete = window.confirm(`Are you sure you want to delete "${itemTitle}" from this order? This action cannot be undone.`);
@@ -11,6 +12,14 @@ const OrderDetail = () => {
       orderDelete(orderId, itemId);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center py-20">
+        <Loader />
+      </div>
+    );
+  }
 
   if (!getAllOrder || getAllOrder.length === 0) {
     return (

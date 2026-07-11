@@ -29,6 +29,14 @@ const ProductDetail = () => {
         }
     }
 
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center py-20">
+                <Loader />
+            </div>
+        );
+    }
+
     if (!getAllProduct || getAllProduct.length === 0) {
         return (
             <div>
@@ -64,11 +72,6 @@ const ProductDetail = () => {
                 <Link to={'/addproduct'} aria-label="Add new product">
                     <button className="px-5 py-2 bg-pink-50 border border-pink-100 rounded-lg" role="button">Add Product</button>
                 </Link>
-            </div>
-
-            {/* Loading  */}
-            <div className="flex justify-center relative top-20">
-                {loading && <Loader />}
             </div>
 
             {/* table  */}
