@@ -19,7 +19,7 @@ const CategoryPage = () => {
 
   // filter product
   const filterProduct = getAllProduct.filter((obj) =>
-    obj.category.includes(categoryname.toLowerCase())
+    obj.category.toLowerCase().includes(categoryname.toLowerCase())
   );
 
   const cartItems = useSelector((state) => state.cart) || [];
