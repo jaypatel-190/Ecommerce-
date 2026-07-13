@@ -95,7 +95,7 @@ const AllProduct = () => {
                           {cartItems.some((p) => p.id === item.id) ? (
                             <button
                               onClick={() => deleteCart(item)}
-                              className=" bg-red-700 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
+                              className=" bg-red-700 hover:bg-red-800 w-full text-white py-[4px] rounded-lg font-bold"
                               aria-label={`Delete ${title} from cart`}
                               role="button"
                               tabIndex={0}

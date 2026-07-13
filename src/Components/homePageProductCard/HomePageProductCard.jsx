@@ -131,7 +131,7 @@ const HomePageProductCard = () => {
                               <button
                                 onClick={() => deleteCart(item)}
                                 disabled={loadingItemId === item.id}
-                                className=" bg-red-700 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                                className=" bg-red-700 hover:bg-red-800 w-full text-white py-[4px] rounded-lg font-bold transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                                 aria-label={`Remove ${title.substring(0, 25)} from cart`}
                                 aria-busy={loadingItemId === item.id}
                                 role="button"
