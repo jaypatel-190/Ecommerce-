@@ -69,10 +69,10 @@ const CartPage = () => {
     }
 
     if (
-      addressInfo.name === "" ||
-      addressInfo.address === "" ||
-      addressInfo.pincode === "" ||
-      addressInfo.mobileNumber === ""
+      addressInfo.name.trim() === "" ||
+      addressInfo.address.trim() === "" ||
+      addressInfo.pincode.trim() === "" ||
+      addressInfo.mobileNumber.trim() === ""
     ) {
       return toast.error("All fields are required");
     }
