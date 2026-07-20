@@ -68,8 +68,8 @@ const AddProductPage = () => {
       return toast.error("all fields are required");
     }
 
-    if (parseFloat(product.price) <= 0) {
-      return toast.error("Product price must be a positive number");
+    if (isNaN(parseFloat(product.price)) || parseFloat(product.price) <= 0) {
+      return toast.error("Product price must be a valid positive number");
     }
 
     setLoading(true);
