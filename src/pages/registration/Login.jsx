@@ -28,7 +28,8 @@ const Login = () => {
 
     const userLoginFunction = async () => {
         // validation 
-        if (userLogin.email === "" || userLogin.password === "") {
+        const trimmedEmail = userLogin.email.trim();
+        if (trimmedEmail === "" || userLogin.password === "") {
             toast.error("All Fields are required");
             setLoading(false);
             return;
@@ -36,7 +37,7 @@ const Login = () => {
 
         // email format validation
         const emailRegex = /^[\w\.-]+@[\w\.-]+\.\w+$/;
-        if (!emailRegex.test(userLogin.email)) {
+        if (!emailRegex.test(trimmedEmail)) {
             toast.error("Please enter a valid email address");
             setLoading(false);
             return;
@@ -44,7 +45,7 @@ const Login = () => {
 
         setLoading(true);
         try {
-            const users = await signInWithEmailAndPassword(auth, userLogin.email, userLogin.password);
+            const users = await signInWithEmailAndPassword(auth, trimmedEmail, userLogin.password);
 
             try {
                 const q = query(

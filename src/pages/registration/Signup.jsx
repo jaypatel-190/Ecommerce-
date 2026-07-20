@@ -72,7 +72,7 @@ const Signup = () => {
 
         setLoading(true);
         try {
-            const users = await createUserWithEmailAndPassword(auth, userSignup.email, userSignup.password);
+            const users = await createUserWithEmailAndPassword(auth, userSignup.email.trim(), userSignup.password);
 
             // create user object
             const user = {
