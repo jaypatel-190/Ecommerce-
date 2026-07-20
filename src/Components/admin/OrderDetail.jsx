@@ -168,7 +168,7 @@ const OrderDetail = () => {
               {getAllOrder.map((order, orderIndex) => {
                 return (
                   <>
-                    {order.cartItems.map((item, index) => {
+                    {order?.cartItems?.map((item, index) => {
                       const {
                         id,
                         productImageUrl,
@@ -180,7 +180,7 @@ const OrderDetail = () => {
                       return (
                         <tr key={`${orderIndex}-${index}`} className="text-pink-300">
                           <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 ">
-                            {getAllOrder.slice(0, orderIndex).reduce((acc, curr) => acc + curr.cartItems.length, 0) + index + 1}
+                            {getAllOrder.slice(0, orderIndex).reduce((acc, curr) => acc + (curr?.cartItems?.length || 0), 0) + index + 1}
                           </td>
 
                           <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 ">
@@ -266,7 +266,7 @@ const OrderDetail = () => {
                         colSpan="16"
                         className="h-12 px-6 text-md border-t border-l first:border-l-0 border-pink-100 text-slate-700 bg-slate-100 font-bold fontPara"
                       >
-                        Total Distinct Items: {order.cartItems.length}
+                        Total Distinct Items: {order?.cartItems?.length || 0}
                       </td>
                     </tr>
                   </>

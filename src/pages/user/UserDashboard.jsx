@@ -102,7 +102,7 @@ const UserDashboard = () => {
               .map((order, index) => {
                 return (
                   <div key={order.id || index}>
-                    {order.cartItems.map((item, itemIndex) => {
+                    {order?.cartItems?.map((item, itemIndex) => {
                       const {
                         id,
                         quantity,
