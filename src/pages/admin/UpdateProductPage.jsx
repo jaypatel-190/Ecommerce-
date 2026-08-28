@@ -117,7 +117,7 @@ const UpdateProductPage = () => {
     getSingleProductFunction();
   }, []);
   return (
-    <div>
+    <div aria-label="Update product page">
       <div className="flex justify-center items-center h-screen">
         {loading && <Loader />}
         {/* Login Form  */}
